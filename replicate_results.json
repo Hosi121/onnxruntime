@@ -1,0 +1,4844 @@
+{
+  "libraries": {
+    ".tools/onnxruntime-build/baseline.so": "f57b7988360f59abf17ddc5f318939669f8e95b11cce5678e336fcaaf42a02ac",
+    ".tools/onnxruntime-build/Release/libonnxruntime.so": "bf24ba743a161e52a264d8731fbba1e27600b9f4f2e57736a1f9bc4d99a7cfe7"
+  },
+  "script_sha256": "009ed5ce478e9a6a9091d2384c28edd6c7d37ad5635f4750066df5101920868e",
+  "benchmark_sha256": "a848753396e8554ec4d6ce77619f8d9ae6fad58aae59b4561d4f036a2135fe60",
+  "fresh_process_pairs": 5,
+  "rounds_per_pair": 4,
+  "cases": [
+    {
+      "name": "convtranspose_16_16_184_184",
+      "shape": [
+        1,
+        16,
+        184,
+        184
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a69820d9a90e9299dada9b56ed8d7d5f676b7db8606ecbbc67b488eb620e2556",
+      "input_sha256": "774897920a287d644ef41872960025f15e635e4fde36e2180c45c1c7437114fa",
+      "round_ms": [
+        [
+          2.57528557143,
+          2.71911321429,
+          2.72106403571,
+          3.191414
+        ],
+        [
+          1.63062896429,
+          1.57748878571,
+          1.82323578571,
+          1.73690514286
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 28,
+      "baseline_median_ms": 2.720088625,
+      "candidate_median_ms": 1.683767053575,
+      "reduction_percent": 38.098816409888116,
+      "speedup": 1.6154779957385828,
+      "paired_reduction_percent": [
+        36.68162543292054,
+        41.98517452602998,
+        32.99548405393304,
+        45.57568705094356
+      ],
+      "pair": 0,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "convtranspose_16_16_184_184",
+      "shape": [
+        1,
+        16,
+        184,
+        184
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a69820d9a90e9299dada9b56ed8d7d5f676b7db8606ecbbc67b488eb620e2556",
+      "input_sha256": "774897920a287d644ef41872960025f15e635e4fde36e2180c45c1c7437114fa",
+      "round_ms": [
+        [
+          2.75268471429,
+          2.69519425,
+          2.78746525,
+          2.91671510714
+        ],
+        [
+          1.66141657143,
+          1.67826217857,
+          1.71550557143,
+          1.66764064286
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 28,
+      "baseline_median_ms": 2.770074982145,
+      "candidate_median_ms": 1.672951410715,
+      "reduction_percent": 39.60627703227172,
+      "speedup": 1.6558012171800627,
+      "paired_reduction_percent": [
+        39.64377530034241,
+        37.73130903013763,
+        38.45643200646178,
+        42.82469896433548
+      ],
+      "pair": 0,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.195196788274,
+          0.192895592834,
+          0.220171358306,
+          0.189067247557
+        ],
+        [
+          0.201294859935,
+          0.195838872964,
+          0.192598315961,
+          0.20054834202
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 307,
+      "baseline_median_ms": 0.19404619055400002,
+      "candidate_median_ms": 0.198193607492,
+      "reduction_percent": -2.137334892356879,
+      "speedup": 0.979073911664041,
+      "paired_reduction_percent": [
+        -3.12406352323793,
+        -1.525841045281351,
+        12.52344653598324,
+        -6.072492518588479
+      ],
+      "pair": 0,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.166460933775,
+          0.169930211921,
+          0.17724547351,
+          0.176231049669
+        ],
+        [
+          0.182309480132,
+          0.215349890728,
+          0.186981033113,
+          0.198472788079
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 302,
+      "baseline_median_ms": 0.173080630795,
+      "candidate_median_ms": 0.192726910596,
+      "reduction_percent": -11.350940720957636,
+      "speedup": 0.8980615642089385,
+      "paired_reduction_percent": [
+        -9.520880363690608,
+        -26.72843062663599,
+        -5.492698577970012,
+        -12.620783029877437
+      ],
+      "pair": 0,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          55.79897155,
+          51.0334587,
+          49.78146575,
+          49.6397885
+        ],
+        [
+          52.78534675,
+          50.42455855,
+          47.8411711,
+          47.547139
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 50.407462225,
+      "candidate_median_ms": 49.132864825,
+      "reduction_percent": 2.5285887123431827,
+      "speedup": 1.0259418498094877,
+      "paired_reduction_percent": [
+        5.400860833607957,
+        1.193139100329088,
+        3.897624589328219,
+        4.215669653789922
+      ],
+      "pair": 0,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          21.3360199,
+          21.9380778,
+          21.3681576,
+          21.83862535
+        ],
+        [
+          20.48943175,
+          20.2596832,
+          19.93914825,
+          19.61390755
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 21.603391475000002,
+      "candidate_median_ms": 20.099415725,
+      "reduction_percent": 6.961757609866215,
+      "speedup": 1.074826839276195,
+      "paired_reduction_percent": [
+        3.9678822665515034,
+        7.650600090405357,
+        6.6875646312155705,
+        10.187078006720785
+      ],
+      "pair": 0,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "control_mobilenetv2",
+      "shape": [
+        1,
+        3,
+        224,
+        224
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a68b309018026daa3504510fdf423657815c54f4087fc4ca9d99600526f0e429",
+      "input_sha256": "8b2d6d28b64f2ffa163347f696208158d42f73d05a67ca4e25e7a99b9c1664ae",
+      "round_ms": [
+        [
+          5.4931862,
+          5.59245725,
+          5.49099895,
+          5.2481899
+        ],
+        [
+          5.23294025,
+          5.4192535,
+          5.40824135,
+          5.1917927
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 5.492092575,
+      "candidate_median_ms": 5.3205908,
+      "reduction_percent": 3.122703644521152,
+      "speedup": 1.0322335961262048,
+      "paired_reduction_percent": [
+        4.737613846040755,
+        3.0970956461043975,
+        1.5071501698247447,
+        1.0746028835580068
+      ],
+      "pair": 0,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "control_mobilenetv2",
+      "shape": [
+        1,
+        3,
+        224,
+        224
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a68b309018026daa3504510fdf423657815c54f4087fc4ca9d99600526f0e429",
+      "input_sha256": "8b2d6d28b64f2ffa163347f696208158d42f73d05a67ca4e25e7a99b9c1664ae",
+      "round_ms": [
+        [
+          3.54426833333,
+          3.45321188889,
+          3.49524548148,
+          3.4925277037
+        ],
+        [
+          3.09229088889,
+          3.06511422222,
+          3.1631352963,
+          3.23535655556
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 27,
+      "baseline_median_ms": 3.49388659259,
+      "candidate_median_ms": 3.127713092595,
+      "reduction_percent": 10.480405997481368,
+      "speedup": 1.1170738776718145,
+      "paired_reduction_percent": [
+        12.752348353245214,
+        11.238744657361577,
+        9.501769959784735,
+        7.363467664624435
+      ],
+      "pair": 0,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.175156178248,
+          0.172877794562,
+          0.186725111782,
+          0.18624170997
+        ],
+        [
+          0.166312688822,
+          0.176894413897,
+          0.179872453172,
+          0.171832054381
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 331,
+      "baseline_median_ms": 0.180698944109,
+      "candidate_median_ms": 0.174363234139,
+      "reduction_percent": 3.5062241239097736,
+      "speedup": 1.0363362723872698,
+      "paired_reduction_percent": [
+        5.048916637972479,
+        -2.3233864969046003,
+        3.669918065439637,
+        7.737072211869799
+      ],
+      "pair": 0,
+      "comparison": "baseline_baseline"
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.144825663594,
+          0.16258281106,
+          0.159763691244,
+          0.185530046083
+        ],
+        [
+          0.151614050691,
+          0.160356170507,
+          0.152901354839,
+          0.183929497696
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 217,
+      "baseline_median_ms": 0.16117325115199999,
+      "candidate_median_ms": 0.156628762673,
+      "reduction_percent": 2.8196294648881626,
+      "speedup": 1.0290143930236344,
+      "paired_reduction_percent": [
+        -4.6872818867451205,
+        1.3695424125606315,
+        4.295304115451026,
+        0.8626895862915762
+      ],
+      "pair": 0,
+      "comparison": "baseline_baseline"
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          49.876296,
+          50.0268078,
+          49.2250363,
+          51.4883967
+        ],
+        [
+          48.91742055,
+          49.42529865,
+          50.82650255,
+          50.48488645
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 49.9515519,
+      "candidate_median_ms": 49.95509255,
+      "reduction_percent": -0.007088168165614306,
+      "speedup": 0.9999291233422005,
+      "paired_reduction_percent": [
+        1.922507336952206,
+        1.2023736401585827,
+        -3.2533571742637823,
+        1.9490027157905376
+      ],
+      "pair": 0,
+      "comparison": "baseline_baseline"
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          23.29599245,
+          21.91188635,
+          22.27226985,
+          22.6648001
+        ],
+        [
+          22.25171835,
+          22.0601999,
+          24.34813905,
+          22.50517485
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 22.468534975,
+      "candidate_median_ms": 22.3784466,
+      "reduction_percent": 0.400953489403022,
+      "speedup": 1.0040256759823536,
+      "paired_reduction_percent": [
+        4.4826340935734565,
+        -0.6768634504167315,
+        -9.320420477933467,
+        0.7042870411197777
+      ],
+      "pair": 0,
+      "comparison": "baseline_baseline"
+    },
+    {
+      "name": "control_mobilenetv2",
+      "shape": [
+        1,
+        3,
+        224,
+        224
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a68b309018026daa3504510fdf423657815c54f4087fc4ca9d99600526f0e429",
+      "input_sha256": "8b2d6d28b64f2ffa163347f696208158d42f73d05a67ca4e25e7a99b9c1664ae",
+      "round_ms": [
+        [
+          6.1164107,
+          6.66551085,
+          5.9469309,
+          6.01013005
+        ],
+        [
+          6.11596395,
+          6.0127903,
+          5.95357025,
+          5.9406656
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 6.063270375,
+      "candidate_median_ms": 5.9831802750000005,
+      "reduction_percent": 1.3209059640524323,
+      "speedup": 1.013385874454535,
+      "paired_reduction_percent": [
+        0.007304120372431111,
+        9.792506001246714,
+        -0.11164330158939251,
+        1.1557894658202894
+      ],
+      "pair": 1,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "control_mobilenetv2",
+      "shape": [
+        1,
+        3,
+        224,
+        224
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a68b309018026daa3504510fdf423657815c54f4087fc4ca9d99600526f0e429",
+      "input_sha256": "8b2d6d28b64f2ffa163347f696208158d42f73d05a67ca4e25e7a99b9c1664ae",
+      "round_ms": [
+        [
+          4.46345741667,
+          3.23747758333,
+          4.12248729167,
+          3.527915375
+        ],
+        [
+          3.76742333333,
+          3.234823375,
+          3.465124,
+          3.93634154167
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 24,
+      "baseline_median_ms": 3.825201333335,
+      "candidate_median_ms": 3.616273666665,
+      "reduction_percent": 5.461873728038425,
+      "speedup": 1.0577742963968424,
+      "paired_reduction_percent": [
+        15.594056767304886,
+        0.08198383654196562,
+        15.945793040970301,
+        -11.576983097844295
+      ],
+      "pair": 1,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          55.08608435,
+          52.4621194,
+          51.5220449,
+          50.0775136
+        ],
+        [
+          53.1649299,
+          53.6727017,
+          48.46052445,
+          48.1709649
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 51.99208215,
+      "candidate_median_ms": 50.812727175,
+      "reduction_percent": 2.268335727731574,
+      "speedup": 1.0232098342397227,
+      "paired_reduction_percent": [
+        3.487549483084662,
+        -2.307536016167888,
+        5.942156325398484,
+        3.8071952118645114
+      ],
+      "pair": 1,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          23.08642825,
+          22.62500225,
+          22.2748811,
+          22.35877835
+        ],
+        [
+          21.53474335,
+          20.46785715,
+          20.8724969,
+          21.1522034
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 22.4918903,
+      "candidate_median_ms": 21.012350150000003,
+      "reduction_percent": 6.578104953677455,
+      "speedup": 1.0704128828730755,
+      "paired_reduction_percent": [
+        6.7211994995371445,
+        9.534342035258803,
+        6.295810036893979,
+        5.396426097671836
+      ],
+      "pair": 1,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.17667129912,
+          0.195367407625,
+          0.177604337243,
+          0.179840061584
+        ],
+        [
+          0.183974498534,
+          0.17330340176,
+          0.183851785924,
+          0.183135906158
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 341,
+      "baseline_median_ms": 0.1787221994135,
+      "candidate_median_ms": 0.183493846041,
+      "reduction_percent": -2.6698678973058554,
+      "speedup": 0.9739956040463951,
+      "paired_reduction_percent": [
+        -4.133778067166105,
+        11.293596067646538,
+        -3.517621685360184,
+        -1.8326531613539032
+      ],
+      "pair": 1,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.153733449721,
+          0.17229972067,
+          0.155138910615,
+          0.168733748603
+        ],
+        [
+          0.153544248603,
+          0.152631326816,
+          0.191287896648,
+          0.180527513966
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 358,
+      "baseline_median_ms": 0.161936329609,
+      "candidate_median_ms": 0.1670358812845,
+      "reduction_percent": -3.1491090898583485,
+      "speedup": 0.9694703219674442,
+      "paired_reduction_percent": [
+        0.12307088557719226,
+        11.415220975122885,
+        -23.301044135026206,
+        -6.989571120563798
+      ],
+      "pair": 1,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "convtranspose_16_16_184_184",
+      "shape": [
+        1,
+        16,
+        184,
+        184
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a69820d9a90e9299dada9b56ed8d7d5f676b7db8606ecbbc67b488eb620e2556",
+      "input_sha256": "774897920a287d644ef41872960025f15e635e4fde36e2180c45c1c7437114fa",
+      "round_ms": [
+        [
+          2.63398241379,
+          2.73297896552,
+          2.65955682759,
+          2.66469144828
+        ],
+        [
+          1.54190510345,
+          1.52299217241,
+          1.49663468966,
+          1.57334175862
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 29,
+      "baseline_median_ms": 2.662124137935,
+      "candidate_median_ms": 1.53244863793,
+      "reduction_percent": 42.43511727748673,
+      "speedup": 1.737170220289368,
+      "paired_reduction_percent": [
+        41.46107068226874,
+        44.273549426304406,
+        43.72616241420193,
+        40.955949716596365
+      ],
+      "pair": 1,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "convtranspose_16_16_184_184",
+      "shape": [
+        1,
+        16,
+        184,
+        184
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a69820d9a90e9299dada9b56ed8d7d5f676b7db8606ecbbc67b488eb620e2556",
+      "input_sha256": "774897920a287d644ef41872960025f15e635e4fde36e2180c45c1c7437114fa",
+      "round_ms": [
+        [
+          2.4553109375,
+          2.42421071875,
+          2.4963605625,
+          2.46698390625
+        ],
+        [
+          1.5536770625,
+          1.5728663125,
+          1.57028315625,
+          1.6567400625
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 32,
+      "baseline_median_ms": 2.4611474218750002,
+      "candidate_median_ms": 1.571574734375,
+      "reduction_percent": 36.14463236104274,
+      "speedup": 1.5660390613582718,
+      "paired_reduction_percent": [
+        36.72177976440102,
+        35.11841605456559,
+        37.097101282619704,
+        32.8434993717341
+      ],
+      "pair": 1,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.179726421053,
+          0.171237334365,
+          0.177529498452,
+          0.189861142415
+        ],
+        [
+          0.194656052632,
+          0.185897866873,
+          0.213052021672,
+          0.18075450774
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 323,
+      "baseline_median_ms": 0.1786279597525,
+      "candidate_median_ms": 0.1902769597525,
+      "reduction_percent": -6.521375498068949,
+      "speedup": 0.9387787149050928,
+      "paired_reduction_percent": [
+        -8.30686522968005,
+        -8.56152810505122,
+        -20.009363812631097,
+        4.79647102043379
+      ],
+      "pair": 1,
+      "comparison": "baseline_baseline"
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.157935809689,
+          0.147543038062,
+          0.148305141869,
+          0.179784615917
+        ],
+        [
+          0.163976937716,
+          0.153949802768,
+          0.149180519031,
+          0.182745560554
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 289,
+      "baseline_median_ms": 0.153120475779,
+      "candidate_median_ms": 0.158963370242,
+      "reduction_percent": -3.815880556322915,
+      "speedup": 0.9632437683341453,
+      "paired_reduction_percent": [
+        -3.825052746996338,
+        -4.34230228017114,
+        -0.590254087598141,
+        -1.6469399352650793
+      ],
+      "pair": 1,
+      "comparison": "baseline_baseline"
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          50.586995,
+          50.9161045,
+          52.59901765,
+          51.7530443
+        ],
+        [
+          49.8370321,
+          51.05375285,
+          51.02597495,
+          51.2732498
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 51.3345744,
+      "candidate_median_ms": 51.0398639,
+      "reduction_percent": 0.5740974838977175,
+      "speedup": 1.0057741239392295,
+      "paired_reduction_percent": [
+        1.4825211499516766,
+        -0.27034344310452596,
+        2.9906313278837526,
+        0.9270845927801696
+      ],
+      "pair": 1,
+      "comparison": "baseline_baseline"
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          23.3840319,
+          23.39840235,
+          23.3920955,
+          24.90091375
+        ],
+        [
+          23.64979705,
+          22.97377435,
+          22.941327,
+          23.4604458
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 23.395248925,
+      "candidate_median_ms": 23.217110075,
+      "reduction_percent": 0.7614317358668576,
+      "speedup": 1.0076727400363157,
+      "paired_reduction_percent": [
+        -1.1365240653815611,
+        1.8147734774720758,
+        1.9270120541359792,
+        5.784799563831278
+      ],
+      "pair": 1,
+      "comparison": "baseline_baseline"
+    },
+    {
+      "name": "convtranspose_16_16_184_184",
+      "shape": [
+        1,
+        16,
+        184,
+        184
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a69820d9a90e9299dada9b56ed8d7d5f676b7db8606ecbbc67b488eb620e2556",
+      "input_sha256": "774897920a287d644ef41872960025f15e635e4fde36e2180c45c1c7437114fa",
+      "round_ms": [
+        [
+          2.823639375,
+          3.02308504167,
+          3.00984275,
+          3.04025883333
+        ],
+        [
+          1.83713329167,
+          1.81508308333,
+          1.88365191667,
+          1.95295020833
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 24,
+      "baseline_median_ms": 3.016463895835,
+      "candidate_median_ms": 1.86039260417,
+      "reduction_percent": 38.32538135998419,
+      "speedup": 1.621412538984357,
+      "paired_reduction_percent": [
+        34.93739647011404,
+        39.95924499936265,
+        37.416932606529016,
+        35.76368607435535
+      ],
+      "pair": 2,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "convtranspose_16_16_184_184",
+      "shape": [
+        1,
+        16,
+        184,
+        184
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a69820d9a90e9299dada9b56ed8d7d5f676b7db8606ecbbc67b488eb620e2556",
+      "input_sha256": "774897920a287d644ef41872960025f15e635e4fde36e2180c45c1c7437114fa",
+      "round_ms": [
+        [
+          2.83455006667,
+          2.8042425,
+          2.9948125,
+          2.94682016667
+        ],
+        [
+          1.77571996667,
+          1.7372339,
+          1.78440116667,
+          1.90499283333
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 30,
+      "baseline_median_ms": 2.89068511667,
+      "candidate_median_ms": 1.78006056667,
+      "reduction_percent": 38.42080701198658,
+      "speedup": 1.6239251465907536,
+      "paired_reduction_percent": [
+        37.35443280576457,
+        38.049797761784156,
+        40.416932056013536,
+        35.3542895193804
+      ],
+      "pair": 2,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.190785023256,
+          0.198913159468,
+          0.209853162791,
+          0.195597418605
+        ],
+        [
+          0.203811501661,
+          0.193009418605,
+          0.201478116279,
+          0.202718159468
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 301,
+      "baseline_median_ms": 0.1972552890365,
+      "candidate_median_ms": 0.2020981378735,
+      "reduction_percent": -2.455117356120118,
+      "speedup": 0.9760371427072163,
+      "paired_reduction_percent": [
+        -6.827830708451765,
+        2.9679991403232187,
+        3.990907928483778,
+        -3.6405086088482808
+      ],
+      "pair": 2,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.180078111498,
+          0.172996961672,
+          0.20379487108,
+          0.175606578397
+        ],
+        [
+          0.169941456446,
+          0.176512365854,
+          0.263355031359,
+          0.231132198606
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 287,
+      "baseline_median_ms": 0.1778423449475,
+      "candidate_median_ms": 0.20382228222999998,
+      "reduction_percent": -14.608409088493168,
+      "speedup": 0.8725363243004838,
+      "paired_reduction_percent": [
+        5.629032294750913,
+        -2.032061226985693,
+        -29.22554427565529,
+        -31.61932811165609
+      ],
+      "pair": 2,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          57.2908655,
+          51.81246925,
+          51.60719415,
+          51.13198585
+        ],
+        [
+          53.07057055,
+          50.2401504,
+          48.4122663,
+          48.7650854
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 51.709831699999995,
+      "candidate_median_ms": 49.5026179,
+      "reduction_percent": 4.2684606146184745,
+      "speedup": 1.044587819667614,
+      "paired_reduction_percent": [
+        7.366436015877619,
+        3.0346340808684813,
+        6.190857500823843,
+        4.629001613478312
+      ],
+      "pair": 2,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          20.98689105,
+          21.43268225,
+          22.2032685,
+          22.2181027
+        ],
+        [
+          19.4615462,
+          19.9771192,
+          20.9972315,
+          21.6346307
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 21.817975375,
+      "candidate_median_ms": 20.48717535,
+      "reduction_percent": 6.099557828472424,
+      "speedup": 1.0649577114592323,
+      "paired_reduction_percent": [
+        7.268083902308153,
+        6.791324730249282,
+        5.431799376744905,
+        2.6261108244854836
+      ],
+      "pair": 2,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "control_mobilenetv2",
+      "shape": [
+        1,
+        3,
+        224,
+        224
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a68b309018026daa3504510fdf423657815c54f4087fc4ca9d99600526f0e429",
+      "input_sha256": "8b2d6d28b64f2ffa163347f696208158d42f73d05a67ca4e25e7a99b9c1664ae",
+      "round_ms": [
+        [
+          5.16369515,
+          5.62394915,
+          5.4025325,
+          5.53828805
+        ],
+        [
+          5.47404795,
+          5.24184875,
+          5.2536265,
+          5.50078075
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 5.470410275000001,
+      "candidate_median_ms": 5.363837225,
+      "reduction_percent": 1.9481728909263696,
+      "speedup": 1.0198688076333264,
+      "paired_reduction_percent": [
+        -6.010285095935619,
+        6.794165270857755,
+        2.7562258996128186,
+        0.6772363528473546
+      ],
+      "pair": 2,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "control_mobilenetv2",
+      "shape": [
+        1,
+        3,
+        224,
+        224
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a68b309018026daa3504510fdf423657815c54f4087fc4ca9d99600526f0e429",
+      "input_sha256": "8b2d6d28b64f2ffa163347f696208158d42f73d05a67ca4e25e7a99b9c1664ae",
+      "round_ms": [
+        [
+          3.85077929167,
+          3.40123833333,
+          3.381393,
+          3.287938875
+        ],
+        [
+          4.03712404167,
+          3.95723083333,
+          3.18584025,
+          3.10416595833
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 24,
+      "baseline_median_ms": 3.391315666665,
+      "candidate_median_ms": 3.571535541665,
+      "reduction_percent": -5.314158064714358,
+      "speedup": 0.949539946362683,
+      "paired_reduction_percent": [
+        -4.839143868959228,
+        -16.346766839348568,
+        5.783200887918083,
+        5.589304535656858
+      ],
+      "pair": 2,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.187769810345,
+          0.187802510345,
+          0.183399355172,
+          0.180683927586
+        ],
+        [
+          0.209584396552,
+          0.180060882759,
+          0.188105382759,
+          0.182483417241
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 290,
+      "baseline_median_ms": 0.1855845827585,
+      "candidate_median_ms": 0.1852944,
+      "reduction_percent": 0.15636145750189678,
+      "speedup": 1.0015660632944114,
+      "paired_reduction_percent": [
+        -11.617728199713696,
+        4.122217307840215,
+        -2.566000072675534,
+        -0.9959323327989544
+      ],
+      "pair": 2,
+      "comparison": "baseline_baseline"
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.189693346154,
+          0.174550141026,
+          0.175299520513,
+          0.173887205128
+        ],
+        [
+          0.182532125641,
+          0.169096712821,
+          0.163577969231,
+          0.201620302564
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 390,
+      "baseline_median_ms": 0.1749248307695,
+      "candidate_median_ms": 0.175814419231,
+      "reduction_percent": -0.5085547075201813,
+      "speedup": 0.9949401848529205,
+      "paired_reduction_percent": [
+        3.7751564080620192,
+        3.124276023465189,
+        6.686584907761195,
+        -15.948900562054247
+      ],
+      "pair": 2,
+      "comparison": "baseline_baseline"
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          51.0492948,
+          52.22950595,
+          54.19326825,
+          52.03023275
+        ],
+        [
+          51.13740145,
+          50.1183381,
+          53.4298992,
+          51.4252316
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 52.12986935,
+      "candidate_median_ms": 51.281316524999994,
+      "reduction_percent": 1.6277670279639889,
+      "speedup": 1.0165470171692321,
+      "paired_reduction_percent": [
+        -0.17259131657976212,
+        4.04209806621767,
+        1.4086049331413109,
+        1.1627877063456138
+      ],
+      "pair": 2,
+      "comparison": "baseline_baseline"
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          22.8296717,
+          22.71996145,
+          24.65597985,
+          24.37789885
+        ],
+        [
+          22.1308279,
+          21.7359464,
+          25.07794405,
+          24.7333877
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 23.603785275,
+      "candidate_median_ms": 23.4321078,
+      "reduction_percent": 0.7273302692760497,
+      "speedup": 1.007326591208325,
+      "paired_reduction_percent": [
+        3.0611206730581153,
+        4.33105950538486,
+        -1.7114071416634458,
+        -1.4582423702196978
+      ],
+      "pair": 2,
+      "comparison": "baseline_baseline"
+    },
+    {
+      "name": "control_mobilenetv2",
+      "shape": [
+        1,
+        3,
+        224,
+        224
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a68b309018026daa3504510fdf423657815c54f4087fc4ca9d99600526f0e429",
+      "input_sha256": "8b2d6d28b64f2ffa163347f696208158d42f73d05a67ca4e25e7a99b9c1664ae",
+      "round_ms": [
+        [
+          6.09048825,
+          6.09177195,
+          6.2080164,
+          6.36500905
+        ],
+        [
+          6.0407631,
+          5.9464804,
+          6.56241975,
+          6.04922465
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 6.149894175,
+      "candidate_median_ms": 6.044993875,
+      "reduction_percent": 1.7057252859151828,
+      "speedup": 1.017353251660656,
+      "paired_reduction_percent": [
+        0.8164394701853261,
+        2.385045782943329,
+        -5.708801767985028,
+        4.961256103791401
+      ],
+      "pair": 3,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "control_mobilenetv2",
+      "shape": [
+        1,
+        3,
+        224,
+        224
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a68b309018026daa3504510fdf423657815c54f4087fc4ca9d99600526f0e429",
+      "input_sha256": "8b2d6d28b64f2ffa163347f696208158d42f73d05a67ca4e25e7a99b9c1664ae",
+      "round_ms": [
+        [
+          4.20655424,
+          3.63377352,
+          3.38851808,
+          3.06651928
+        ],
+        [
+          4.69447872,
+          3.44714704,
+          3.86264072,
+          3.23412364
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 25,
+      "baseline_median_ms": 3.5111458,
+      "candidate_median_ms": 3.65489388,
+      "reduction_percent": -4.094050437894081,
+      "speedup": 0.9606696980214375,
+      "paired_reduction_percent": [
+        -11.599148665678438,
+        5.135886399436362,
+        -13.992035125868352,
+        -5.465622247775337
+      ],
+      "pair": 3,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          57.2194552,
+          51.7553442,
+          52.757425,
+          52.06378245
+        ],
+        [
+          53.3036003,
+          49.4956837,
+          50.1205945,
+          49.01722255
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 52.410603725,
+      "candidate_median_ms": 49.808139100000005,
+      "reduction_percent": 4.96553071331749,
+      "speedup": 1.0522497863205653,
+      "paired_reduction_percent": [
+        6.843572498746897,
+        4.366042840460915,
+        4.998027291893026,
+        5.851591560651192
+      ],
+      "pair": 3,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          22.59713785,
+          22.97509545,
+          24.01798325,
+          23.16505675
+        ],
+        [
+          20.9113618,
+          20.97768295,
+          21.5575367,
+          21.67553455
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 23.0700761,
+      "candidate_median_ms": 21.267609825,
+      "reduction_percent": 7.813005328578004,
+      "speedup": 1.084751708811265,
+      "paired_reduction_percent": [
+        7.460130841304746,
+        8.693815894462375,
+        10.24418463611011,
+        6.430039071672045
+      ],
+      "pair": 3,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.184427108772,
+          0.186633392982,
+          0.177728673684,
+          0.192392810526
+        ],
+        [
+          0.196535564912,
+          0.193534192982,
+          0.193150789474,
+          0.192077564912
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 285,
+      "baseline_median_ms": 0.18553025087699998,
+      "candidate_median_ms": 0.193342491228,
+      "reduction_percent": -4.210763643164195,
+      "speedup": 0.9595937742325488,
+      "paired_reduction_percent": [
+        -6.5654426947446165,
+        -3.697516232084763,
+        -8.677336903678468,
+        0.16385519455643927
+      ],
+      "pair": 3,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.155131079365,
+          0.16685764127,
+          0.158821231746,
+          0.159647901587
+        ],
+        [
+          0.162025419048,
+          0.177595752381,
+          0.200615736508,
+          0.155305003175
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 315,
+      "baseline_median_ms": 0.1592345666665,
+      "candidate_median_ms": 0.1698105857145,
+      "reduction_percent": -6.641785932165334,
+      "speedup": 0.9377187293507054,
+      "paired_reduction_percent": [
+        -4.444202742107306,
+        -6.435492572752,
+        -26.315439253639106,
+        2.720297835943264
+      ],
+      "pair": 3,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "convtranspose_16_16_184_184",
+      "shape": [
+        1,
+        16,
+        184,
+        184
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a69820d9a90e9299dada9b56ed8d7d5f676b7db8606ecbbc67b488eb620e2556",
+      "input_sha256": "774897920a287d644ef41872960025f15e635e4fde36e2180c45c1c7437114fa",
+      "round_ms": [
+        [
+          2.73051368,
+          2.70001604,
+          2.79295456,
+          2.62953436
+        ],
+        [
+          1.62632656,
+          1.68110512,
+          1.63469392,
+          1.70536284
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 25,
+      "baseline_median_ms": 2.71526486,
+      "candidate_median_ms": 1.65789952,
+      "reduction_percent": 38.94151747686227,
+      "speedup": 1.6377740793362436,
+      "paired_reduction_percent": [
+        40.43880563894483,
+        37.73721729445726,
+        41.47080144404498,
+        35.145824069018815
+      ],
+      "pair": 3,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "convtranspose_16_16_184_184",
+      "shape": [
+        1,
+        16,
+        184,
+        184
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a69820d9a90e9299dada9b56ed8d7d5f676b7db8606ecbbc67b488eb620e2556",
+      "input_sha256": "774897920a287d644ef41872960025f15e635e4fde36e2180c45c1c7437114fa",
+      "round_ms": [
+        [
+          2.60262912121,
+          2.65343775758,
+          2.57458430303,
+          2.65191736364
+        ],
+        [
+          1.60627754545,
+          1.56944621212,
+          1.6936059697,
+          1.55830630303
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 33,
+      "baseline_median_ms": 2.627273242425,
+      "candidate_median_ms": 1.587861878785,
+      "reduction_percent": 39.56236248501555,
+      "speedup": 1.654598096677865,
+      "paired_reduction_percent": [
+        38.28250316728884,
+        40.85234493868916,
+        34.21827486065172,
+        41.238504472436446
+      ],
+      "pair": 3,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.181937027682,
+          0.190108207612,
+          0.178395709343,
+          0.184107816609
+        ],
+        [
+          0.196366287197,
+          0.193111813149,
+          0.192015903114,
+          0.188423688581
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 289,
+      "baseline_median_ms": 0.18302242214550002,
+      "candidate_median_ms": 0.1925638581315,
+      "reduction_percent": -5.213260689127308,
+      "speedup": 0.9504505358451831,
+      "paired_reduction_percent": [
+        -7.93090867694084,
+        -1.5799452189513952,
+        -7.63482138733087,
+        -2.344208981178597
+      ],
+      "pair": 3,
+      "comparison": "baseline_baseline"
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.165456245763,
+          0.159501172316,
+          0.162321429379,
+          0.166475025424
+        ],
+        [
+          0.168339110169,
+          0.158083830508,
+          0.157792878531,
+          0.17186730226
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 354,
+      "baseline_median_ms": 0.16388883757099998,
+      "candidate_median_ms": 0.1632114703385,
+      "reduction_percent": 0.4133089492483144,
+      "speedup": 1.0041502428174633,
+      "paired_reduction_percent": [
+        -1.7423726694061559,
+        0.888609022378839,
+        2.7898662951189257,
+        -3.239090561642044
+      ],
+      "pair": 3,
+      "comparison": "baseline_baseline"
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          52.48618895,
+          52.94412015,
+          53.56397915,
+          53.08080985
+        ],
+        [
+          51.88978775,
+          51.71609975,
+          52.63311895,
+          52.6390284
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 53.012465000000006,
+      "candidate_median_ms": 52.26145335,
+      "reduction_percent": 1.4166699284781648,
+      "speedup": 1.0143702787017883,
+      "paired_reduction_percent": [
+        1.1363012097680536,
+        2.3194651200564076,
+        1.737847364538081,
+        0.8322809151714572
+      ],
+      "pair": 3,
+      "comparison": "baseline_baseline"
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          23.1172354,
+          22.7456504,
+          21.90906645,
+          22.02531775
+        ],
+        [
+          22.3596844,
+          22.5217785,
+          22.33644975,
+          23.012024
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 22.385484075,
+      "candidate_median_ms": 22.44073145,
+      "reduction_percent": -0.2468000013531091,
+      "speedup": 0.9975380760148974,
+      "paired_reduction_percent": [
+        3.276996521824571,
+        0.9842404858205311,
+        -1.9507143354344114,
+        -4.479872940766083
+      ],
+      "pair": 3,
+      "comparison": "baseline_baseline"
+    },
+    {
+      "name": "convtranspose_16_16_184_184",
+      "shape": [
+        1,
+        16,
+        184,
+        184
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a69820d9a90e9299dada9b56ed8d7d5f676b7db8606ecbbc67b488eb620e2556",
+      "input_sha256": "774897920a287d644ef41872960025f15e635e4fde36e2180c45c1c7437114fa",
+      "round_ms": [
+        [
+          2.96679269231,
+          2.93409792308,
+          2.72994361538,
+          2.87813211538
+        ],
+        [
+          1.78549588462,
+          1.62244453846,
+          1.73233365385,
+          1.63238823077
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 26,
+      "baseline_median_ms": 2.90611501923,
+      "candidate_median_ms": 1.6823609423099999,
+      "reduction_percent": 42.10962294411335,
+      "speedup": 1.727402810029398,
+      "paired_reduction_percent": [
+        39.817302056592986,
+        44.70380399721366,
+        36.543244186790126,
+        43.283068138292336
+      ],
+      "pair": 4,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "convtranspose_16_16_184_184",
+      "shape": [
+        1,
+        16,
+        184,
+        184
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a69820d9a90e9299dada9b56ed8d7d5f676b7db8606ecbbc67b488eb620e2556",
+      "input_sha256": "774897920a287d644ef41872960025f15e635e4fde36e2180c45c1c7437114fa",
+      "round_ms": [
+        [
+          2.58306246667,
+          2.63287056667,
+          2.621632,
+          2.63261656667
+        ],
+        [
+          1.6443025,
+          1.70934446667,
+          1.54941006667,
+          1.63703743333
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 30,
+      "baseline_median_ms": 2.627124283335,
+      "candidate_median_ms": 1.640669966665,
+      "reduction_percent": 37.54882564664002,
+      "speedup": 1.6012509137807722,
+      "paired_reduction_percent": [
+        36.34290609627489,
+        35.076775580656694,
+        40.899025238095966,
+        37.817095962413894
+      ],
+      "pair": 4,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.192722003436,
+          0.189619865979,
+          0.186894463918,
+          0.191921591065
+        ],
+        [
+          0.199050721649,
+          0.18898538488,
+          0.197850982818,
+          0.197225013746
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 291,
+      "baseline_median_ms": 0.190770728522,
+      "candidate_median_ms": 0.197537998282,
+      "reduction_percent": -3.547331297851386,
+      "speedup": 0.9657419341146749,
+      "paired_reduction_percent": [
+        -3.283858666974515,
+        0.33460687028977754,
+        -5.862409549384617,
+        -2.763327800468174
+      ],
+      "pair": 4,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.157568561798,
+          0.168353890449,
+          0.157190764045,
+          0.23148719382
+        ],
+        [
+          0.180096463483,
+          0.185035668539,
+          0.167312685393,
+          0.161322325843
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 356,
+      "baseline_median_ms": 0.1629612261235,
+      "candidate_median_ms": 0.17370457443800003,
+      "reduction_percent": -6.592579455899639,
+      "speedup": 0.938151609712877,
+      "paired_reduction_percent": [
+        -14.297205881640519,
+        -9.908757110102817,
+        -6.4392595897697635,
+        30.3104749853069
+      ],
+      "pair": 4,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          53.37507885,
+          52.8506463,
+          55.10035315,
+          52.3629436
+        ],
+        [
+          50.75329645,
+          50.61303045,
+          56.09897635,
+          50.29260055
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 53.112862575,
+      "candidate_median_ms": 50.683163449999995,
+      "reduction_percent": 4.574596448400914,
+      "speedup": 1.0479389793298313,
+      "paired_reduction_percent": [
+        4.911997240075272,
+        4.2338476568450245,
+        -1.8123716871313755,
+        3.953832438862348
+      ],
+      "pair": 4,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          22.46890045,
+          23.49760555,
+          23.28133245,
+          23.84444455
+        ],
+        [
+          20.95981905,
+          20.76109085,
+          21.6477472,
+          22.7226488
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 23.389469,
+      "candidate_median_ms": 21.303783125000002,
+      "reduction_percent": 8.917200621356546,
+      "speedup": 1.097902136102411,
+      "paired_reduction_percent": [
+        6.716311745464165,
+        11.64593002541061,
+        7.016717163883801,
+        4.704641987560986
+      ],
+      "pair": 4,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "control_mobilenetv2",
+      "shape": [
+        1,
+        3,
+        224,
+        224
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a68b309018026daa3504510fdf423657815c54f4087fc4ca9d99600526f0e429",
+      "input_sha256": "8b2d6d28b64f2ffa163347f696208158d42f73d05a67ca4e25e7a99b9c1664ae",
+      "round_ms": [
+        [
+          5.79228605,
+          5.7881797,
+          5.80820215,
+          6.00050545
+        ],
+        [
+          5.6362665,
+          5.8403239,
+          5.62449775,
+          5.58893985
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 5.8002441000000005,
+      "candidate_median_ms": 5.630382125,
+      "reduction_percent": 2.9285314905971083,
+      "speedup": 1.030168818248726,
+      "paired_reduction_percent": [
+        2.6935746724732423,
+        -0.9008738965032403,
+        3.1628444612589734,
+        6.858848865806799
+      ],
+      "pair": 4,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "control_mobilenetv2",
+      "shape": [
+        1,
+        3,
+        224,
+        224
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a68b309018026daa3504510fdf423657815c54f4087fc4ca9d99600526f0e429",
+      "input_sha256": "8b2d6d28b64f2ffa163347f696208158d42f73d05a67ca4e25e7a99b9c1664ae",
+      "round_ms": [
+        [
+          3.46357756522,
+          3.25568191304,
+          3.38571121739,
+          3.11496034783
+        ],
+        [
+          3.29926191304,
+          3.14581173913,
+          3.2004466087,
+          3.23558169565
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 23,
+      "baseline_median_ms": 3.320696565215,
+      "candidate_median_ms": 3.218014152175,
+      "reduction_percent": 3.092194996544406,
+      "speedup": 1.0319086269308664,
+      "paired_reduction_percent": [
+        4.744101989515082,
+        3.3747207756979147,
+        5.471955426630215,
+        -3.8723237008146727
+      ],
+      "pair": 4,
+      "comparison": "baseline_candidate"
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.192183836879,
+          0.19339801773,
+          0.222751737589,
+          0.197451719858
+        ],
+        [
+          0.195164680851,
+          0.189065340426,
+          0.192574379433,
+          0.188121943262
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 282,
+      "baseline_median_ms": 0.195424868794,
+      "candidate_median_ms": 0.1908198599295,
+      "reduction_percent": 2.356408830113732,
+      "speedup": 1.024132754662965,
+      "paired_reduction_percent": [
+        -1.5510378085940468,
+        2.240290440850734,
+        13.547529856615693,
+        4.725092596159531
+      ],
+      "pair": 4,
+      "comparison": "baseline_baseline"
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.165036097561,
+          0.200878542683,
+          0.192953609756,
+          0.212754027439
+        ],
+        [
+          0.195934670732,
+          0.16381082622,
+          0.176088728659,
+          0.177952987805
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 328,
+      "baseline_median_ms": 0.19691607621950002,
+      "candidate_median_ms": 0.17702085823199998,
+      "reduction_percent": 10.103399564656712,
+      "speedup": 1.112389117227224,
+      "paired_reduction_percent": [
+        -18.72231204423589,
+        18.45280036778013,
+        8.740381233772487,
+        16.357405804681193
+      ],
+      "pair": 4,
+      "comparison": "baseline_baseline"
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          54.1062981,
+          53.239341,
+          54.13438495,
+          52.94950225
+        ],
+        [
+          52.263961,
+          52.8498637,
+          52.10963645,
+          52.22246305
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 53.67281955,
+      "candidate_median_ms": 52.243212025000005,
+      "reduction_percent": 2.6635595763107145,
+      "speedup": 1.027364464579932,
+      "paired_reduction_percent": [
+        3.405032620407633,
+        0.7315592054379594,
+        3.7402262940090747,
+        1.3730803295700533
+      ],
+      "pair": 4,
+      "comparison": "baseline_baseline"
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          23.40482105,
+          24.0499067,
+          22.50291465,
+          25.4582187
+        ],
+        [
+          22.78262965,
+          22.73781985,
+          25.7108633,
+          25.1127396
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 23.727363875,
+      "candidate_median_ms": 23.947684625,
+      "reduction_percent": -0.9285513180506966,
+      "speedup": 0.9907999143361861,
+      "paired_reduction_percent": [
+        2.6583899046730752,
+        5.455683742839634,
+        -14.255702871805532,
+        1.3570434918135033
+      ],
+      "pair": 4,
+      "comparison": "baseline_baseline"
+    }
+  ],
+  "summary": [
+    {
+      "name": "control_mobilenetv2",
+      "threads": 1,
+      "comparison": "baseline_candidate",
+      "median_reduction_percent": 1.9481728909263696,
+      "pair_reduction_percent": [
+        3.122703644521152,
+        1.3209059640524323,
+        1.9481728909263696,
+        1.7057252859151828,
+        2.9285314905971083
+      ],
+      "baseline_ms": 5.8002441000000005,
+      "candidate_ms": 5.630382125
+    },
+    {
+      "name": "control_mobilenetv2",
+      "threads": 4,
+      "comparison": "baseline_candidate",
+      "median_reduction_percent": 3.092194996544406,
+      "pair_reduction_percent": [
+        10.480405997481368,
+        5.461873728038425,
+        -5.314158064714358,
+        -4.094050437894081,
+        3.092194996544406
+      ],
+      "baseline_ms": 3.49388659259,
+      "candidate_ms": 3.571535541665
+    },
+    {
+      "name": "convtranspose_16_16_184_184",
+      "threads": 1,
+      "comparison": "baseline_candidate",
+      "median_reduction_percent": 38.94151747686227,
+      "pair_reduction_percent": [
+        38.098816409888116,
+        42.43511727748673,
+        38.32538135998419,
+        38.94151747686227,
+        42.10962294411335
+      ],
+      "baseline_ms": 2.720088625,
+      "candidate_ms": 1.6823609423099999
+    },
+    {
+      "name": "convtranspose_16_16_184_184",
+      "threads": 4,
+      "comparison": "baseline_candidate",
+      "median_reduction_percent": 38.42080701198658,
+      "pair_reduction_percent": [
+        39.60627703227172,
+        36.14463236104274,
+        38.42080701198658,
+        39.56236248501555,
+        37.54882564664002
+      ],
+      "baseline_ms": 2.627273242425,
+      "candidate_ms": 1.640669966665
+    },
+    {
+      "name": "fallback_dilation",
+      "threads": 1,
+      "comparison": "baseline_baseline",
+      "median_reduction_percent": 0.15636145750189678,
+      "pair_reduction_percent": [
+        3.5062241239097736,
+        -6.521375498068949,
+        0.15636145750189678,
+        -5.213260689127308,
+        2.356408830113732
+      ],
+      "baseline_ms": 0.18302242214550002,
+      "candidate_ms": 0.1902769597525
+    },
+    {
+      "name": "fallback_dilation",
+      "threads": 1,
+      "comparison": "baseline_candidate",
+      "median_reduction_percent": -2.6698678973058554,
+      "pair_reduction_percent": [
+        -2.137334892356879,
+        -2.6698678973058554,
+        -2.455117356120118,
+        -4.210763643164195,
+        -3.547331297851386
+      ],
+      "baseline_ms": 0.190770728522,
+      "candidate_ms": 0.197537998282
+    },
+    {
+      "name": "fallback_dilation",
+      "threads": 4,
+      "comparison": "baseline_baseline",
+      "median_reduction_percent": 0.4133089492483144,
+      "pair_reduction_percent": [
+        2.8196294648881626,
+        -3.815880556322915,
+        -0.5085547075201813,
+        0.4133089492483144,
+        10.103399564656712
+      ],
+      "baseline_ms": 0.16388883757099998,
+      "candidate_ms": 0.1632114703385
+    },
+    {
+      "name": "fallback_dilation",
+      "threads": 4,
+      "comparison": "baseline_candidate",
+      "median_reduction_percent": -6.641785932165334,
+      "pair_reduction_percent": [
+        -11.350940720957636,
+        -3.1491090898583485,
+        -14.608409088493168,
+        -6.641785932165334,
+        -6.592579455899639
+      ],
+      "baseline_ms": 0.1629612261235,
+      "candidate_ms": 0.17370457443800003
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "threads": 1,
+      "comparison": "baseline_baseline",
+      "median_reduction_percent": 1.4166699284781648,
+      "pair_reduction_percent": [
+        -0.007088168165614306,
+        0.5740974838977175,
+        1.6277670279639889,
+        1.4166699284781648,
+        2.6635595763107145
+      ],
+      "baseline_ms": 52.12986935,
+      "candidate_ms": 51.281316524999994
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "threads": 1,
+      "comparison": "baseline_candidate",
+      "median_reduction_percent": 4.2684606146184745,
+      "pair_reduction_percent": [
+        2.5285887123431827,
+        2.268335727731574,
+        4.2684606146184745,
+        4.96553071331749,
+        4.574596448400914
+      ],
+      "baseline_ms": 51.99208215,
+      "candidate_ms": 49.808139100000005
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "threads": 4,
+      "comparison": "baseline_baseline",
+      "median_reduction_percent": 0.400953489403022,
+      "pair_reduction_percent": [
+        0.400953489403022,
+        0.7614317358668576,
+        0.7273302692760497,
+        -0.2468000013531091,
+        -0.9285513180506966
+      ],
+      "baseline_ms": 23.395248925,
+      "candidate_ms": 23.217110075
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "threads": 4,
+      "comparison": "baseline_candidate",
+      "median_reduction_percent": 6.961757609866215,
+      "pair_reduction_percent": [
+        6.961757609866215,
+        6.578104953677455,
+        6.099557828472424,
+        7.813005328578004,
+        8.917200621356546
+      ],
+      "baseline_ms": 22.4918903,
+      "candidate_ms": 21.012350150000003
+    }
+  ]
+}

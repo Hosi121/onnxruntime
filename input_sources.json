@@ -1,0 +1,14 @@
+{
+  "image": {
+    "path": ".tools/esp-dl-upstream/examples/pp_ocr_v6/main/pp_ocr_v6.jpg",
+    "sha256": "12c1b3498e051e6c9dbad44d6db07dbb487b896fc98299fde6d9c511dbce5434",
+    "bytes": 181502,
+    "url": "https://raw.githubusercontent.com/espressif/esp-dl/485f889d0003572e264d0eec1f4f5257a7bcb03e/examples/pp_ocr_v6/main/pp_ocr_v6.jpg"
+  },
+  "control": {
+    "path": ".tools/esp-dl-upstream/examples/tutorial/how_to_quantize_model/quantize_mobilenetv2/models/torch/mobilenet_v2.onnx",
+    "sha256": "a68b309018026daa3504510fdf423657815c54f4087fc4ca9d99600526f0e429",
+    "bytes": 13989175,
+    "url": "https://raw.githubusercontent.com/espressif/esp-dl/485f889d0003572e264d0eec1f4f5257a7bcb03e/examples/tutorial/how_to_quantize_model/quantize_mobilenetv2/models/torch/mobilenet_v2.onnx"
+  }
+}

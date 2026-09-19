@@ -1,0 +1,3025 @@
+{
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "optimization": "ORT_ENABLE_ALL",
+  "provider": "CPUExecutionProvider",
+  "intra_op_allow_spinning": false,
+  "rounds": 8,
+  "input_note": "BGR, square resize, ImageNet normalization.",
+  "libraries": {
+    ".tools/onnxruntime-build/baseline.so": "f57b7988360f59abf17ddc5f318939669f8e95b11cce5678e336fcaaf42a02ac",
+    ".tools/onnxruntime-build/Release/libonnxruntime.so": "bf24ba743a161e52a264d8731fbba1e27600b9f4f2e57736a1f9bc4d99a7cfe7"
+  },
+  "script_sha256": "a848753396e8554ec4d6ce77619f8d9ae6fad58aae59b4561d4f036a2135fe60",
+  "cases": [
+    {
+      "name": "convtranspose_16_1_368_368",
+      "shape": [
+        1,
+        16,
+        368,
+        368
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "0c7e0d777690694908b39ab74fe58f2d0253a8b8ff073791757e376c63eb5d0a",
+      "input_sha256": "fa1cc8fa98ac7ae5faa1d0675a4f8cd5f2f6a7ccefe6366812e6b4998e872093",
+      "round_ms": [
+        [
+          0.656501518182,
+          0.641667372727,
+          0.667150881818,
+          0.666549918182,
+          0.653937827273,
+          0.652668945455,
+          0.681096218182,
+          0.652302181818
+        ],
+        [
+          0.537812227273,
+          0.540310663636,
+          0.649699145455,
+          0.524511354545,
+          0.542382109091,
+          0.521763436364,
+          0.526154490909,
+          0.545803436364
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "05296cd0da64fc5563f6d4c97e947aa4647b4ec78989d6ed8daf873df3273583"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "05296cd0da64fc5563f6d4c97e947aa4647b4ec78989d6ed8daf873df3273583"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "05296cd0da64fc5563f6d4c97e947aa4647b4ec78989d6ed8daf873df3273583"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "05296cd0da64fc5563f6d4c97e947aa4647b4ec78989d6ed8daf873df3273583"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "05296cd0da64fc5563f6d4c97e947aa4647b4ec78989d6ed8daf873df3273583"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "05296cd0da64fc5563f6d4c97e947aa4647b4ec78989d6ed8daf873df3273583"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "05296cd0da64fc5563f6d4c97e947aa4647b4ec78989d6ed8daf873df3273583"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "05296cd0da64fc5563f6d4c97e947aa4647b4ec78989d6ed8daf873df3273583"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 110,
+      "baseline_median_ms": 0.6552196727274999,
+      "candidate_median_ms": 0.5390614454545,
+      "reduction_percent": 17.72813486955681,
+      "speedup": 1.2154823503934014,
+      "paired_reduction_percent": [
+        18.079058101446165,
+        15.79583338642382,
+        2.615860495521438,
+        21.309516326160093,
+        17.059070989546644,
+        20.056953835874758,
+        22.748874995455783,
+        16.326596541066674
+      ]
+    },
+    {
+      "name": "convtranspose_16_1_368_368",
+      "shape": [
+        1,
+        16,
+        368,
+        368
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "0c7e0d777690694908b39ab74fe58f2d0253a8b8ff073791757e376c63eb5d0a",
+      "input_sha256": "fa1cc8fa98ac7ae5faa1d0675a4f8cd5f2f6a7ccefe6366812e6b4998e872093",
+      "round_ms": [
+        [
+          0.539931816176,
+          0.538885801471,
+          0.526768352941,
+          0.563057698529,
+          0.576775860294,
+          0.552899625,
+          0.539045963235,
+          0.517070647059
+        ],
+        [
+          0.409024235294,
+          0.337082360294,
+          0.383512573529,
+          0.369452845588,
+          0.320400044118,
+          0.373600147059,
+          0.350695191176,
+          0.455108647059
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "05296cd0da64fc5563f6d4c97e947aa4647b4ec78989d6ed8daf873df3273583"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "05296cd0da64fc5563f6d4c97e947aa4647b4ec78989d6ed8daf873df3273583"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "05296cd0da64fc5563f6d4c97e947aa4647b4ec78989d6ed8daf873df3273583"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "05296cd0da64fc5563f6d4c97e947aa4647b4ec78989d6ed8daf873df3273583"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "05296cd0da64fc5563f6d4c97e947aa4647b4ec78989d6ed8daf873df3273583"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "05296cd0da64fc5563f6d4c97e947aa4647b4ec78989d6ed8daf873df3273583"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "05296cd0da64fc5563f6d4c97e947aa4647b4ec78989d6ed8daf873df3273583"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "05296cd0da64fc5563f6d4c97e947aa4647b4ec78989d6ed8daf873df3273583"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 136,
+      "baseline_median_ms": 0.5394888897054999,
+      "candidate_median_ms": 0.3715264963235,
+      "reduction_percent": 31.133614906080542,
+      "speedup": 1.4520872536524279,
+      "paired_reduction_percent": [
+        24.245205961215,
+        37.44827579909062,
+        27.195213723867194,
+        34.384549478107964,
+        44.4498173077697,
+        32.428938243718285,
+        34.941504974574386,
+        11.983275467758247
+      ]
+    },
+    {
+      "name": "convtranspose_16_16_184_184",
+      "shape": [
+        1,
+        16,
+        184,
+        184
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a69820d9a90e9299dada9b56ed8d7d5f676b7db8606ecbbc67b488eb620e2556",
+      "input_sha256": "774897920a287d644ef41872960025f15e635e4fde36e2180c45c1c7437114fa",
+      "round_ms": [
+        [
+          2.60310403571,
+          2.70852992857,
+          2.605746,
+          2.51926753571,
+          2.57210546429,
+          2.6596295,
+          2.63173057143,
+          2.70391939286
+        ],
+        [
+          1.64487928571,
+          1.65606539286,
+          1.49457928571,
+          1.60754767857,
+          1.58474239286,
+          1.55277189286,
+          1.86191196429,
+          1.54440814286
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 28,
+      "baseline_median_ms": 2.6187382857149997,
+      "candidate_median_ms": 1.596145035715,
+      "reduction_percent": 39.049081596972144,
+      "speedup": 1.6406643676600008,
+      "paired_reduction_percent": [
+        36.810851078360486,
+        38.85740839000664,
+        42.64294042051681,
+        36.18987837601979,
+        38.38734784160766,
+        41.616984889812656,
+        29.251421687961955,
+        42.88261155498269
+      ]
+    },
+    {
+      "name": "convtranspose_16_16_184_184",
+      "shape": [
+        1,
+        16,
+        184,
+        184
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a69820d9a90e9299dada9b56ed8d7d5f676b7db8606ecbbc67b488eb620e2556",
+      "input_sha256": "774897920a287d644ef41872960025f15e635e4fde36e2180c45c1c7437114fa",
+      "round_ms": [
+        [
+          2.515002625,
+          2.50739471875,
+          2.551717375,
+          2.485939,
+          2.49272853125,
+          2.59245825,
+          2.52237803125,
+          2.63649121875
+        ],
+        [
+          1.75371190625,
+          1.7660310625,
+          1.62518090625,
+          1.6687395,
+          1.61052446875,
+          1.62839978125,
+          1.65891940625,
+          1.64041334375
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 2166784,
+          "sha256": "edae76495789de6e1ce0ba2c86c80ff8536969a78cd280d6b8fe1894b86deca7"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 32,
+      "baseline_median_ms": 2.5186903281250004,
+      "candidate_median_ms": 1.6496663749999998,
+      "reduction_percent": 34.50300910044515,
+      "speedup": 1.5267876985884499,
+      "paired_reduction_percent": [
+        30.269977103900647,
+        29.567090123711704,
+        36.3103091991134,
+        32.87287017098972,
+        35.39110061285379,
+        37.187039318762416,
+        34.23192774051006,
+        37.780435903452606
+      ]
+    },
+    {
+      "name": "convtranspose_64_32_64_64",
+      "shape": [
+        1,
+        64,
+        64,
+        64
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "8d2633bbeeaec9f6e32f7e06bea4c8664dc164975c5d08da3a80ec8cb64cd4ed",
+      "input_sha256": "863358ec42845b360084b50c8cd8cf0c158c912dfcf8f0d9091245227de5b382",
+      "round_ms": [
+        [
+          0.727229139241,
+          0.723581392405,
+          0.738929759494,
+          0.752550139241,
+          0.724520620253,
+          0.732555,
+          0.712081316456,
+          0.744079493671
+        ],
+        [
+          0.635411670886,
+          0.633251544304,
+          0.628278544304,
+          0.622665506329,
+          0.640984405063,
+          0.634909797468,
+          0.649390708861,
+          0.647310101266
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 524288,
+          "sha256": "541e85e944a305c162693ab762264113ba1b5ea2f91f1a9ceb9265ee6ffe0235"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 524288,
+          "sha256": "541e85e944a305c162693ab762264113ba1b5ea2f91f1a9ceb9265ee6ffe0235"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 524288,
+          "sha256": "541e85e944a305c162693ab762264113ba1b5ea2f91f1a9ceb9265ee6ffe0235"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 524288,
+          "sha256": "541e85e944a305c162693ab762264113ba1b5ea2f91f1a9ceb9265ee6ffe0235"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 524288,
+          "sha256": "541e85e944a305c162693ab762264113ba1b5ea2f91f1a9ceb9265ee6ffe0235"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 524288,
+          "sha256": "541e85e944a305c162693ab762264113ba1b5ea2f91f1a9ceb9265ee6ffe0235"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 524288,
+          "sha256": "541e85e944a305c162693ab762264113ba1b5ea2f91f1a9ceb9265ee6ffe0235"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 524288,
+          "sha256": "541e85e944a305c162693ab762264113ba1b5ea2f91f1a9ceb9265ee6ffe0235"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 79,
+      "baseline_median_ms": 0.7298920696205,
+      "candidate_median_ms": 0.635160734177,
+      "reduction_percent": 12.978814181767252,
+      "speedup": 1.1491454530265424,
+      "paired_reduction_percent": [
+        12.625658599272949,
+        12.48371628252719,
+        14.974524136877509,
+        17.25926634509667,
+        11.529860276554926,
+        13.329402233552424,
+        8.80385514213582,
+        13.005249200939184
+      ]
+    },
+    {
+      "name": "convtranspose_64_32_64_64",
+      "shape": [
+        1,
+        64,
+        64,
+        64
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "8d2633bbeeaec9f6e32f7e06bea4c8664dc164975c5d08da3a80ec8cb64cd4ed",
+      "input_sha256": "863358ec42845b360084b50c8cd8cf0c158c912dfcf8f0d9091245227de5b382",
+      "round_ms": [
+        [
+          0.584171077519,
+          0.60440075969,
+          0.611775550388,
+          0.587757589147,
+          0.604947534884,
+          0.654701829457,
+          0.574196775194,
+          0.652343953488
+        ],
+        [
+          0.332048790698,
+          0.321238666667,
+          0.52511303876,
+          0.507036054264,
+          0.522849434109,
+          0.513303837209,
+          0.458384596899,
+          0.541243325581
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 524288,
+          "sha256": "541e85e944a305c162693ab762264113ba1b5ea2f91f1a9ceb9265ee6ffe0235"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 524288,
+          "sha256": "541e85e944a305c162693ab762264113ba1b5ea2f91f1a9ceb9265ee6ffe0235"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 524288,
+          "sha256": "541e85e944a305c162693ab762264113ba1b5ea2f91f1a9ceb9265ee6ffe0235"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 524288,
+          "sha256": "541e85e944a305c162693ab762264113ba1b5ea2f91f1a9ceb9265ee6ffe0235"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 524288,
+          "sha256": "541e85e944a305c162693ab762264113ba1b5ea2f91f1a9ceb9265ee6ffe0235"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 524288,
+          "sha256": "541e85e944a305c162693ab762264113ba1b5ea2f91f1a9ceb9265ee6ffe0235"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 524288,
+          "sha256": "541e85e944a305c162693ab762264113ba1b5ea2f91f1a9ceb9265ee6ffe0235"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 524288,
+          "sha256": "541e85e944a305c162693ab762264113ba1b5ea2f91f1a9ceb9265ee6ffe0235"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 129,
+      "baseline_median_ms": 0.604674147287,
+      "candidate_median_ms": 0.5101699457365,
+      "reduction_percent": 15.628946925300735,
+      "speedup": 1.1852406288145223,
+      "paired_reduction_percent": [
+        43.15898142232141,
+        46.85005577561404,
+        14.165736367371483,
+        13.733814139286482,
+        13.571110888276039,
+        21.59731130815281,
+        20.16942332284456,
+        17.030989145060538
+      ]
+    },
+    {
+      "name": "convtranspose_128_64_32_32",
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "cc56071ec8968d800168323dd71ed234dd8e3f0be2fd23df2900e322fc043254",
+      "input_sha256": "5bb4aa5f94bee7ddf7725f1db6ff0798901a47ccec1feea81e4bd3ee2f1deacd",
+      "round_ms": [
+        [
+          0.5903335625,
+          0.589284270833,
+          0.6077190625,
+          0.580522458333,
+          0.585749298611,
+          0.611050138889,
+          0.567189513889,
+          0.618431527778
+        ],
+        [
+          0.532840027778,
+          0.551746229167,
+          0.538634736111,
+          0.529428909722,
+          0.538433875,
+          0.526668708333,
+          0.573195048611,
+          0.532351923611
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 262144,
+          "sha256": "bf3fa66883d9b678d84f0994f039cefd2898f4ada0f421149ee5fedea9df94ce"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 262144,
+          "sha256": "bf3fa66883d9b678d84f0994f039cefd2898f4ada0f421149ee5fedea9df94ce"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 262144,
+          "sha256": "bf3fa66883d9b678d84f0994f039cefd2898f4ada0f421149ee5fedea9df94ce"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 262144,
+          "sha256": "bf3fa66883d9b678d84f0994f039cefd2898f4ada0f421149ee5fedea9df94ce"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 262144,
+          "sha256": "bf3fa66883d9b678d84f0994f039cefd2898f4ada0f421149ee5fedea9df94ce"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 262144,
+          "sha256": "bf3fa66883d9b678d84f0994f039cefd2898f4ada0f421149ee5fedea9df94ce"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 262144,
+          "sha256": "bf3fa66883d9b678d84f0994f039cefd2898f4ada0f421149ee5fedea9df94ce"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 262144,
+          "sha256": "bf3fa66883d9b678d84f0994f039cefd2898f4ada0f421149ee5fedea9df94ce"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 144,
+      "baseline_median_ms": 0.5898089166664999,
+      "candidate_median_ms": 0.535636951389,
+      "reduction_percent": 9.184663667628268,
+      "speedup": 1.1011356015245448,
+      "paired_reduction_percent": [
+        9.73916076845115,
+        6.3701075226285875,
+        11.367806384878698,
+        8.80130439013811,
+        8.077760182248639,
+        13.80924824097426,
+        -1.058823298904521,
+        13.919019374106067
+      ]
+    },
+    {
+      "name": "convtranspose_128_64_32_32",
+      "shape": [
+        1,
+        128,
+        32,
+        32
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "cc56071ec8968d800168323dd71ed234dd8e3f0be2fd23df2900e322fc043254",
+      "input_sha256": "5bb4aa5f94bee7ddf7725f1db6ff0798901a47ccec1feea81e4bd3ee2f1deacd",
+      "round_ms": [
+        [
+          0.33333290708,
+          0.318626685841,
+          0.35961110177,
+          0.303092384956,
+          0.269471238938,
+          0.32726810177,
+          0.340192960177,
+          0.293146336283
+        ],
+        [
+          0.294484800885,
+          0.276071641593,
+          0.306036141593,
+          0.264532384956,
+          0.220321933628,
+          0.234486190265,
+          0.259940150442,
+          0.282293973451
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 262144,
+          "sha256": "bf3fa66883d9b678d84f0994f039cefd2898f4ada0f421149ee5fedea9df94ce"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 262144,
+          "sha256": "bf3fa66883d9b678d84f0994f039cefd2898f4ada0f421149ee5fedea9df94ce"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 262144,
+          "sha256": "bf3fa66883d9b678d84f0994f039cefd2898f4ada0f421149ee5fedea9df94ce"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 262144,
+          "sha256": "bf3fa66883d9b678d84f0994f039cefd2898f4ada0f421149ee5fedea9df94ce"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 262144,
+          "sha256": "bf3fa66883d9b678d84f0994f039cefd2898f4ada0f421149ee5fedea9df94ce"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 262144,
+          "sha256": "bf3fa66883d9b678d84f0994f039cefd2898f4ada0f421149ee5fedea9df94ce"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 262144,
+          "sha256": "bf3fa66883d9b678d84f0994f039cefd2898f4ada0f421149ee5fedea9df94ce"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 262144,
+          "sha256": "bf3fa66883d9b678d84f0994f039cefd2898f4ada0f421149ee5fedea9df94ce"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 226,
+      "baseline_median_ms": 0.32294739380549997,
+      "candidate_median_ms": 0.2703020132745,
+      "reduction_percent": 16.301534411114172,
+      "speedup": 1.1947650329838164,
+      "paired_reduction_percent": [
+        11.654446761740346,
+        13.355769036004617,
+        14.898027317094742,
+        12.722193599683395,
+        18.23916552419469,
+        28.35042920565658,
+        23.590379322736442,
+        3.7020291536317473
+      ]
+    },
+    {
+      "name": "convtranspose_1_1_1_1",
+      "shape": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "670e44d23612851d36977b47a06e967569d1f8cf59147555c254452817b9b05c",
+      "input_sha256": "c1dc16ad6849c67e7753a9f3083bdc590cea0605302177fdcb743269325327d5",
+      "round_ms": [
+        [
+          0.0011328373298,
+          0.00112494939149,
+          0.00111719918062,
+          0.00121979901193,
+          0.0011680914568,
+          0.00109719363779,
+          0.00123509796361,
+          0.00109054331847
+        ],
+        [
+          0.00115098819135,
+          0.00110318231112,
+          0.00115612700325,
+          0.00113610796482,
+          0.00110672321967,
+          0.00115574033016,
+          0.00110541968912,
+          0.00116335221111
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 4,
+          "sha256": "8a74e0c6435088f8953ee0c8cf3dd9bd0a7d5f857e50fbab144e941eae6783c5"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 4,
+          "sha256": "8a74e0c6435088f8953ee0c8cf3dd9bd0a7d5f857e50fbab144e941eae6783c5"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 4,
+          "sha256": "8a74e0c6435088f8953ee0c8cf3dd9bd0a7d5f857e50fbab144e941eae6783c5"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 4,
+          "sha256": "8a74e0c6435088f8953ee0c8cf3dd9bd0a7d5f857e50fbab144e941eae6783c5"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 4,
+          "sha256": "8a74e0c6435088f8953ee0c8cf3dd9bd0a7d5f857e50fbab144e941eae6783c5"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 4,
+          "sha256": "8a74e0c6435088f8953ee0c8cf3dd9bd0a7d5f857e50fbab144e941eae6783c5"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 4,
+          "sha256": "8a74e0c6435088f8953ee0c8cf3dd9bd0a7d5f857e50fbab144e941eae6783c5"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 4,
+          "sha256": "8a74e0c6435088f8953ee0c8cf3dd9bd0a7d5f857e50fbab144e941eae6783c5"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 8299,
+      "baseline_median_ms": 0.0011288933606450001,
+      "candidate_median_ms": 0.0011435480780850001,
+      "reduction_percent": -1.2981489617076791,
+      "speedup": 0.9871848698617544,
+      "paired_reduction_percent": [
+        -1.6022478313991062,
+        1.9349386323209927,
+        -3.484412028336492,
+        6.8610522136414716,
+        5.253718514312133,
+        -5.3360400893252,
+        10.499432296930555,
+        -6.676387027169972
+      ]
+    },
+    {
+      "name": "convtranspose_1_1_1_1",
+      "shape": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "670e44d23612851d36977b47a06e967569d1f8cf59147555c254452817b9b05c",
+      "input_sha256": "c1dc16ad6849c67e7753a9f3083bdc590cea0605302177fdcb743269325327d5",
+      "round_ms": [
+        [
+          0.00110217765378,
+          0.00111942123021,
+          0.00112144588632,
+          0.00111751972489,
+          0.00116160563198,
+          0.00110503412925,
+          0.00117379068258,
+          0.00110273267584
+        ],
+        [
+          0.00114627666753,
+          0.00114411873865,
+          0.00109869166883,
+          0.00115820321827,
+          0.00110138489489,
+          0.00114904399169,
+          0.00110557280042,
+          0.00111708642616
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 4,
+          "sha256": "8a74e0c6435088f8953ee0c8cf3dd9bd0a7d5f857e50fbab144e941eae6783c5"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 4,
+          "sha256": "8a74e0c6435088f8953ee0c8cf3dd9bd0a7d5f857e50fbab144e941eae6783c5"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 4,
+          "sha256": "8a74e0c6435088f8953ee0c8cf3dd9bd0a7d5f857e50fbab144e941eae6783c5"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 4,
+          "sha256": "8a74e0c6435088f8953ee0c8cf3dd9bd0a7d5f857e50fbab144e941eae6783c5"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 4,
+          "sha256": "8a74e0c6435088f8953ee0c8cf3dd9bd0a7d5f857e50fbab144e941eae6783c5"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 4,
+          "sha256": "8a74e0c6435088f8953ee0c8cf3dd9bd0a7d5f857e50fbab144e941eae6783c5"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 4,
+          "sha256": "8a74e0c6435088f8953ee0c8cf3dd9bd0a7d5f857e50fbab144e941eae6783c5"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 4,
+          "sha256": "8a74e0c6435088f8953ee0c8cf3dd9bd0a7d5f857e50fbab144e941eae6783c5"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 7706,
+      "baseline_median_ms": 0.0011184704775499999,
+      "candidate_median_ms": 0.0011306025824050002,
+      "reduction_percent": -1.0847049697346955,
+      "speedup": 0.989269346237302,
+      "paired_reduction_percent": [
+        -4.001080370188892,
+        -2.2062747939278315,
+        2.0290071743601867,
+        -3.640516804659044,
+        5.184266969104789,
+        -3.9826699714578195,
+        5.811758703865033,
+        -1.3016527608621153
+      ]
+    },
+    {
+      "name": "convtranspose_3_5_1_7",
+      "shape": [
+        1,
+        3,
+        1,
+        7
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "65f86349d8eb6976609f43a13ee2f6842dcc66522f4b0eea2d55c704f3e4fe60",
+      "input_sha256": "79b2599fb32fd8372395a0fda9148a0b5015ef0894aa241d73dafed9d6829d5d",
+      "round_ms": [
+        [
+          0.00121392463442,
+          0.00123271822272,
+          0.00126231467942,
+          0.00129824343832,
+          0.00124111642295,
+          0.00120821700412,
+          0.00121825534308,
+          0.00122923940757
+        ],
+        [
+          0.00138879574428,
+          0.00133753983877,
+          0.00121692097863,
+          0.00126590223097,
+          0.00122720613048,
+          0.00122231224222,
+          0.00126433145857,
+          0.00124331158605
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 140,
+          "sha256": "3bada0ba36c0421fda94d522df331c9eb83c0259999f5f26fc0db3e4552ad322"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 140,
+          "sha256": "3bada0ba36c0421fda94d522df331c9eb83c0259999f5f26fc0db3e4552ad322"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 140,
+          "sha256": "3bada0ba36c0421fda94d522df331c9eb83c0259999f5f26fc0db3e4552ad322"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 140,
+          "sha256": "3bada0ba36c0421fda94d522df331c9eb83c0259999f5f26fc0db3e4552ad322"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 140,
+          "sha256": "3bada0ba36c0421fda94d522df331c9eb83c0259999f5f26fc0db3e4552ad322"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 140,
+          "sha256": "3bada0ba36c0421fda94d522df331c9eb83c0259999f5f26fc0db3e4552ad322"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 140,
+          "sha256": "3bada0ba36c0421fda94d522df331c9eb83c0259999f5f26fc0db3e4552ad322"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 140,
+          "sha256": "3bada0ba36c0421fda94d522df331c9eb83c0259999f5f26fc0db3e4552ad322"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 10668,
+      "baseline_median_ms": 0.0012309788151449999,
+      "candidate_median_ms": 0.00125382152231,
+      "reduction_percent": -1.8556539628433288,
+      "speedup": 0.9817815320932477,
+      "paired_reduction_percent": [
+        -14.405433821972945,
+        -8.503290867130243,
+        3.596068518418649,
+        2.4911512275271996,
+        1.1207886877313666,
+        -1.1666147763138124,
+        -3.782139413688923,
+        -1.144787450950524
+      ]
+    },
+    {
+      "name": "convtranspose_3_5_1_7",
+      "shape": [
+        1,
+        3,
+        1,
+        7
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "65f86349d8eb6976609f43a13ee2f6842dcc66522f4b0eea2d55c704f3e4fe60",
+      "input_sha256": "79b2599fb32fd8372395a0fda9148a0b5015ef0894aa241d73dafed9d6829d5d",
+      "round_ms": [
+        [
+          0.00121493057184,
+          0.00133187599323,
+          0.00125686739612,
+          0.00137817350528,
+          0.00123459893187,
+          0.00122378103426,
+          0.00118122404585,
+          0.00121013755373
+        ],
+        [
+          0.00120336915462,
+          0.00120644223004,
+          0.00121438830272,
+          0.00121782089358,
+          0.00119550579654,
+          0.00126208466849,
+          0.00120901901785,
+          0.00127195740524
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 140,
+          "sha256": "3bada0ba36c0421fda94d522df331c9eb83c0259999f5f26fc0db3e4552ad322"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 140,
+          "sha256": "3bada0ba36c0421fda94d522df331c9eb83c0259999f5f26fc0db3e4552ad322"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 140,
+          "sha256": "3bada0ba36c0421fda94d522df331c9eb83c0259999f5f26fc0db3e4552ad322"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 140,
+          "sha256": "3bada0ba36c0421fda94d522df331c9eb83c0259999f5f26fc0db3e4552ad322"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 140,
+          "sha256": "3bada0ba36c0421fda94d522df331c9eb83c0259999f5f26fc0db3e4552ad322"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 140,
+          "sha256": "3bada0ba36c0421fda94d522df331c9eb83c0259999f5f26fc0db3e4552ad322"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 140,
+          "sha256": "3bada0ba36c0421fda94d522df331c9eb83c0259999f5f26fc0db3e4552ad322"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 140,
+          "sha256": "3bada0ba36c0421fda94d522df331c9eb83c0259999f5f26fc0db3e4552ad322"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 7677,
+      "baseline_median_ms": 0.001229189983065,
+      "candidate_median_ms": 0.001211703660285,
+      "reduction_percent": 1.4225891050948514,
+      "speedup": 1.0144311875528107,
+      "paired_reduction_percent": [
+        0.9516113503087009,
+        9.417825970855153,
+        3.379759354975287,
+        11.635154143194882,
+        3.166464373234734,
+        -3.129941808026282,
+        -2.353065203646354,
+        -5.108497899222519
+      ]
+    },
+    {
+      "name": "fallback_overlap",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a1e5a8f4c71042f23c55ea282c71a02b5483e09fa82cef9edf32722997d8b354",
+      "input_sha256": "922abf486c03530a1e0217177995a8f434076fa3d46cda4b575d4a7828a8ab48",
+      "round_ms": [
+        [
+          0.354993377246,
+          0.358436664671,
+          0.343250862275,
+          0.349865065868,
+          0.381725431138,
+          0.344037401198,
+          0.360428275449,
+          0.383212383234
+        ],
+        [
+          0.369155580838,
+          0.354420748503,
+          0.366330538922,
+          0.350414005988,
+          0.359076035928,
+          0.433112053892,
+          0.37231760479,
+          0.358674718563
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "4d73feb48b93022545a672e6e6326ee8e0b3d81d890369854fb3cadb436ef492"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "4d73feb48b93022545a672e6e6326ee8e0b3d81d890369854fb3cadb436ef492"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "4d73feb48b93022545a672e6e6326ee8e0b3d81d890369854fb3cadb436ef492"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "4d73feb48b93022545a672e6e6326ee8e0b3d81d890369854fb3cadb436ef492"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "4d73feb48b93022545a672e6e6326ee8e0b3d81d890369854fb3cadb436ef492"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "4d73feb48b93022545a672e6e6326ee8e0b3d81d890369854fb3cadb436ef492"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "4d73feb48b93022545a672e6e6326ee8e0b3d81d890369854fb3cadb436ef492"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "4d73feb48b93022545a672e6e6326ee8e0b3d81d890369854fb3cadb436ef492"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 167,
+      "baseline_median_ms": 0.3567150209585,
+      "candidate_median_ms": 0.362703287425,
+      "reduction_percent": -1.678725625405253,
+      "speedup": 0.9834899029754774,
+      "paired_reduction_percent": [
+        -3.989427549851454,
+        1.12039770587814,
+        -6.7238510324584055,
+        -0.15690052353130035,
+        5.933425798348724,
+        -25.890979406258175,
+        -3.298667210886541,
+        6.403150248935619
+      ]
+    },
+    {
+      "name": "fallback_overlap",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a1e5a8f4c71042f23c55ea282c71a02b5483e09fa82cef9edf32722997d8b354",
+      "input_sha256": "922abf486c03530a1e0217177995a8f434076fa3d46cda4b575d4a7828a8ab48",
+      "round_ms": [
+        [
+          0.361334967391,
+          0.373724315217,
+          0.406616086957,
+          0.345039744565,
+          0.304894059783,
+          0.390464130435,
+          0.408892304348,
+          0.425543309783
+        ],
+        [
+          0.364352630435,
+          0.398838755435,
+          0.356694608696,
+          0.320677679348,
+          0.287037173913,
+          0.308693880435,
+          0.501539288043,
+          0.395500934783
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "4d73feb48b93022545a672e6e6326ee8e0b3d81d890369854fb3cadb436ef492"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "4d73feb48b93022545a672e6e6326ee8e0b3d81d890369854fb3cadb436ef492"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "4d73feb48b93022545a672e6e6326ee8e0b3d81d890369854fb3cadb436ef492"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "4d73feb48b93022545a672e6e6326ee8e0b3d81d890369854fb3cadb436ef492"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "4d73feb48b93022545a672e6e6326ee8e0b3d81d890369854fb3cadb436ef492"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "4d73feb48b93022545a672e6e6326ee8e0b3d81d890369854fb3cadb436ef492"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "4d73feb48b93022545a672e6e6326ee8e0b3d81d890369854fb3cadb436ef492"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "4d73feb48b93022545a672e6e6326ee8e0b3d81d890369854fb3cadb436ef492"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 184,
+      "baseline_median_ms": 0.38209422282600003,
+      "candidate_median_ms": 0.3605236195655,
+      "reduction_percent": 5.645362314290459,
+      "speedup": 1.0598313178107353,
+      "paired_reduction_percent": [
+        -0.8351428221267554,
+        -6.720044480760512,
+        12.277300348492915,
+        7.060654779846831,
+        5.856750991708126,
+        20.9418083829885,
+        -22.65804044483801,
+        7.0597690785738525
+      ]
+    },
+    {
+      "name": "fallback_padding",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "3650c91bb031baae2310df31f3c26f836c4b0089bc416b4b75d35742d32bf430",
+      "input_sha256": "680873965d1bda99f1062e675a93b43aa0dc30606075aed793617109ccf33c86",
+      "round_ms": [
+        [
+          0.184424607843,
+          0.192486973856,
+          0.194222751634,
+          0.190872490196,
+          0.185782431373,
+          0.183193862745,
+          0.190222189542,
+          0.194263359477
+        ],
+        [
+          0.189898470588,
+          0.188958111111,
+          0.18839479085,
+          0.188237624183,
+          0.18343353268,
+          0.193427875817,
+          0.188865457516,
+          0.180897199346
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 254016,
+          "sha256": "73ff98a65102f3d9b524f4e02881c180c7491b98b84c4954815ecf2af2403d96"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 254016,
+          "sha256": "73ff98a65102f3d9b524f4e02881c180c7491b98b84c4954815ecf2af2403d96"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 254016,
+          "sha256": "73ff98a65102f3d9b524f4e02881c180c7491b98b84c4954815ecf2af2403d96"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 254016,
+          "sha256": "73ff98a65102f3d9b524f4e02881c180c7491b98b84c4954815ecf2af2403d96"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 254016,
+          "sha256": "73ff98a65102f3d9b524f4e02881c180c7491b98b84c4954815ecf2af2403d96"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 254016,
+          "sha256": "73ff98a65102f3d9b524f4e02881c180c7491b98b84c4954815ecf2af2403d96"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 254016,
+          "sha256": "73ff98a65102f3d9b524f4e02881c180c7491b98b84c4954815ecf2af2403d96"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 254016,
+          "sha256": "73ff98a65102f3d9b524f4e02881c180c7491b98b84c4954815ecf2af2403d96"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 306,
+      "baseline_median_ms": 0.190547339869,
+      "candidate_median_ms": 0.18863012418300001,
+      "reduction_percent": 1.0061623989702784,
+      "speedup": 1.0101638892213207,
+      "paired_reduction_percent": [
+        -2.968076120112939,
+        1.8332995081734471,
+        3.0006581283445133,
+        1.380432565370926,
+        1.2643276738498632,
+        -5.586438824233664,
+        0.7132354165760524,
+        6.880432916935375
+      ]
+    },
+    {
+      "name": "fallback_padding",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "3650c91bb031baae2310df31f3c26f836c4b0089bc416b4b75d35742d32bf430",
+      "input_sha256": "680873965d1bda99f1062e675a93b43aa0dc30606075aed793617109ccf33c86",
+      "round_ms": [
+        [
+          0.157169647249,
+          0.166966029126,
+          0.208907750809,
+          0.205258585761,
+          0.198391996764,
+          0.193917809061,
+          0.201557304207,
+          0.179678676375
+        ],
+        [
+          0.168073485437,
+          0.159987420712,
+          0.188386203883,
+          0.184522281553,
+          0.186449964401,
+          0.18804484466,
+          0.18990968932,
+          0.189218864078
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 254016,
+          "sha256": "73ff98a65102f3d9b524f4e02881c180c7491b98b84c4954815ecf2af2403d96"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 254016,
+          "sha256": "73ff98a65102f3d9b524f4e02881c180c7491b98b84c4954815ecf2af2403d96"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 254016,
+          "sha256": "73ff98a65102f3d9b524f4e02881c180c7491b98b84c4954815ecf2af2403d96"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 254016,
+          "sha256": "73ff98a65102f3d9b524f4e02881c180c7491b98b84c4954815ecf2af2403d96"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 254016,
+          "sha256": "73ff98a65102f3d9b524f4e02881c180c7491b98b84c4954815ecf2af2403d96"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 254016,
+          "sha256": "73ff98a65102f3d9b524f4e02881c180c7491b98b84c4954815ecf2af2403d96"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 254016,
+          "sha256": "73ff98a65102f3d9b524f4e02881c180c7491b98b84c4954815ecf2af2403d96"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 254016,
+          "sha256": "73ff98a65102f3d9b524f4e02881c180c7491b98b84c4954815ecf2af2403d96"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 309,
+      "baseline_median_ms": 0.19615490291249998,
+      "candidate_median_ms": 0.18724740453049998,
+      "reduction_percent": 4.541053142053464,
+      "speedup": 1.0475707441944762,
+      "paired_reduction_percent": [
+        -6.937623376303237,
+        4.179657652835256,
+        9.823257799928363,
+        10.102527078767388,
+        6.019412354222031,
+        3.028584341705609,
+        5.778810613103791,
+        -5.309582581234662
+      ]
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.200954225256,
+          0.197237972696,
+          0.193933897611,
+          0.198890102389,
+          0.191774808874,
+          0.190620228669,
+          0.18000359727,
+          0.189167266212
+        ],
+        [
+          0.202869744027,
+          0.201265197952,
+          0.198030317406,
+          0.192255805461,
+          0.199128720137,
+          0.207161935154,
+          0.187811877133,
+          0.179012535836
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 293,
+      "baseline_median_ms": 0.1928543532425,
+      "candidate_median_ms": 0.19857951877149999,
+      "reduction_percent": -2.9686472888693416,
+      "speedup": 0.9711694057654164,
+      "paired_reduction_percent": [
+        -0.9532114930948854,
+        -2.041810307088854,
+        -2.112276319644102,
+        3.3356596674802397,
+        -3.8346596751566375,
+        -8.677833722318962,
+        -4.33784656608156,
+        5.368122392073682
+      ]
+    },
+    {
+      "name": "fallback_dilation",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a943be7f0a9c2d1ab2bcf442aeb4a7e5e7ec93aebb9427dff1e8c8b1b2b35318",
+      "input_sha256": "e8ce6fafdee88537a47c8e384374dadf2dfd91e69859ed5c253f261800560c48",
+      "round_ms": [
+        [
+          0.193029021798,
+          0.179280359673,
+          0.197756223433,
+          0.16359206267,
+          0.162164416894,
+          0.179914414169,
+          0.169439675749,
+          0.160522517711
+        ],
+        [
+          0.203995215259,
+          0.203619269755,
+          0.203632621253,
+          0.189456190736,
+          0.169338831063,
+          0.167762839237,
+          0.177928893733,
+          0.171388326975
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "03f3cefea5332549d28f3e80888b4ccfd3b26cc72459dc159dea2c8aa32a33e2"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 367,
+      "baseline_median_ms": 0.17436001771100001,
+      "candidate_median_ms": 0.1836925422345,
+      "reduction_percent": -5.352445271580852,
+      "speedup": 0.9491948643642475,
+      "paired_reduction_percent": [
+        -5.6811112437153755,
+        -13.575893157729713,
+        -2.971536226768068,
+        -15.810136288930753,
+        -4.424160556560075,
+        6.754086373860845,
+        -5.010171287494392,
+        -6.769024943629698
+      ]
+    },
+    {
+      "name": "fallback_output_padding",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "2fb639fbc0543006bd9176fe3a62af285c76663bcb501eb260f342431fe94c4d",
+      "input_sha256": "755ca30603410fbdb382a5a6b3ef094cde53bd5fa1cde0c12bb7cebdde3af64a",
+      "round_ms": [
+        [
+          0.178752407018,
+          0.180871431579,
+          0.174134526316,
+          0.180602824561,
+          0.180676624561,
+          0.177219407018,
+          0.179630084211,
+          0.254687684211
+        ],
+        [
+          0.188187147368,
+          0.185558042105,
+          0.180123859649,
+          0.182971470175,
+          0.176455189474,
+          0.177978792982,
+          0.183219424561,
+          0.178288024561
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "a4d2a80fb7950744de51d7431c1053ea6c2b7593d6930227203822616559878e"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "a4d2a80fb7950744de51d7431c1053ea6c2b7593d6930227203822616559878e"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "a4d2a80fb7950744de51d7431c1053ea6c2b7593d6930227203822616559878e"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "a4d2a80fb7950744de51d7431c1053ea6c2b7593d6930227203822616559878e"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "a4d2a80fb7950744de51d7431c1053ea6c2b7593d6930227203822616559878e"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "a4d2a80fb7950744de51d7431c1053ea6c2b7593d6930227203822616559878e"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "a4d2a80fb7950744de51d7431c1053ea6c2b7593d6930227203822616559878e"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "a4d2a80fb7950744de51d7431c1053ea6c2b7593d6930227203822616559878e"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 285,
+      "baseline_median_ms": 0.180116454386,
+      "candidate_median_ms": 0.181547664912,
+      "reduction_percent": -0.7946028756111501,
+      "speedup": 0.9921166128647606,
+      "paired_reduction_percent": [
+        -5.278105345484918,
+        -2.59112812072424,
+        -3.439486390040325,
+        -1.3115219098912778,
+        2.3364589067662034,
+        -0.42850045419848826,
+        -1.9981844164721485,
+        29.99739068132776
+      ]
+    },
+    {
+      "name": "fallback_output_padding",
+      "shape": [
+        1,
+        16,
+        64,
+        64
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "2fb639fbc0543006bd9176fe3a62af285c76663bcb501eb260f342431fe94c4d",
+      "input_sha256": "755ca30603410fbdb382a5a6b3ef094cde53bd5fa1cde0c12bb7cebdde3af64a",
+      "round_ms": [
+        [
+          0.231314337621,
+          0.206843514469,
+          0.187711376206,
+          0.193596385852,
+          0.206211083601,
+          0.212825938907,
+          0.199970192926,
+          0.160179884244
+        ],
+        [
+          0.178253636656,
+          0.173323987138,
+          0.198157678457,
+          0.164926128617,
+          0.179417456592,
+          0.164549199357,
+          0.204457102894,
+          0.183801713826
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "a4d2a80fb7950744de51d7431c1053ea6c2b7593d6930227203822616559878e"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "a4d2a80fb7950744de51d7431c1053ea6c2b7593d6930227203822616559878e"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "a4d2a80fb7950744de51d7431c1053ea6c2b7593d6930227203822616559878e"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "a4d2a80fb7950744de51d7431c1053ea6c2b7593d6930227203822616559878e"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "a4d2a80fb7950744de51d7431c1053ea6c2b7593d6930227203822616559878e"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "a4d2a80fb7950744de51d7431c1053ea6c2b7593d6930227203822616559878e"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "a4d2a80fb7950744de51d7431c1053ea6c2b7593d6930227203822616559878e"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 266256,
+          "sha256": "a4d2a80fb7950744de51d7431c1053ea6c2b7593d6930227203822616559878e"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 311,
+      "baseline_median_ms": 0.2030906382635,
+      "candidate_median_ms": 0.178835546624,
+      "reduction_percent": 11.942988533046128,
+      "speedup": 1.1356279112144079,
+      "paired_reduction_percent": [
+        22.93878603060827,
+        16.205259041865506,
+        -5.565087456146456,
+        14.80929362850697,
+        12.993301107346511,
+        22.683672769368503,
+        -2.243789387981643,
+        -14.747063711206799
+      ]
+    },
+    {
+      "name": "ppocrv6_tiny_det_256",
+      "shape": [
+        1,
+        3,
+        256,
+        256
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "55c1135a67b9b399a8a87f5b769f1e5b8e41b3dd775dc350d8e38787f7af32de",
+      "round_ms": [
+        [
+          5.4209282,
+          5.4650115,
+          5.19089815,
+          5.4280799,
+          5.3689974,
+          5.30493725,
+          5.54423525,
+          5.37290225
+        ],
+        [
+          5.1454768,
+          5.2189653,
+          5.15240465,
+          5.27049725,
+          5.5812929,
+          4.80704075,
+          5.22455045,
+          5.17771825
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 65536,
+          "sha256": "3086f625be3607773588226a8c0824c4f5f6868fe2f3b131a3d12c0fd42353b4"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 65536,
+          "sha256": "3086f625be3607773588226a8c0824c4f5f6868fe2f3b131a3d12c0fd42353b4"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 65536,
+          "sha256": "3086f625be3607773588226a8c0824c4f5f6868fe2f3b131a3d12c0fd42353b4"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 65536,
+          "sha256": "3086f625be3607773588226a8c0824c4f5f6868fe2f3b131a3d12c0fd42353b4"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 65536,
+          "sha256": "3086f625be3607773588226a8c0824c4f5f6868fe2f3b131a3d12c0fd42353b4"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 65536,
+          "sha256": "3086f625be3607773588226a8c0824c4f5f6868fe2f3b131a3d12c0fd42353b4"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 65536,
+          "sha256": "3086f625be3607773588226a8c0824c4f5f6868fe2f3b131a3d12c0fd42353b4"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 65536,
+          "sha256": "3086f625be3607773588226a8c0824c4f5f6868fe2f3b131a3d12c0fd42353b4"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 5.396915225,
+      "candidate_median_ms": 5.198341774999999,
+      "reduction_percent": 3.679387978528059,
+      "speedup": 1.0381993833023802,
+      "paired_reduction_percent": [
+        5.081258962256685,
+        4.502208275316533,
+        0.7415576050167627,
+        2.90310115000334,
+        -3.954099512136122,
+        9.38553043205177,
+        5.76607567292532,
+        3.632748018075338
+      ]
+    },
+    {
+      "name": "ppocrv6_tiny_det_256",
+      "shape": [
+        1,
+        3,
+        256,
+        256
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "55c1135a67b9b399a8a87f5b769f1e5b8e41b3dd775dc350d8e38787f7af32de",
+      "round_ms": [
+        [
+          4.38155685714,
+          3.76146114286,
+          4.22627614286,
+          3.62292733333,
+          4.29532004762,
+          4.16219790476,
+          3.79156838095,
+          4.0728122381
+        ],
+        [
+          4.20531119048,
+          4.08851185714,
+          4.36208371429,
+          4.04772914286,
+          4.218047,
+          4.18236695238,
+          3.80624,
+          3.80763147619
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 65536,
+          "sha256": "3086f625be3607773588226a8c0824c4f5f6868fe2f3b131a3d12c0fd42353b4"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 65536,
+          "sha256": "3086f625be3607773588226a8c0824c4f5f6868fe2f3b131a3d12c0fd42353b4"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 65536,
+          "sha256": "3086f625be3607773588226a8c0824c4f5f6868fe2f3b131a3d12c0fd42353b4"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 65536,
+          "sha256": "3086f625be3607773588226a8c0824c4f5f6868fe2f3b131a3d12c0fd42353b4"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 65536,
+          "sha256": "3086f625be3607773588226a8c0824c4f5f6868fe2f3b131a3d12c0fd42353b4"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 65536,
+          "sha256": "3086f625be3607773588226a8c0824c4f5f6868fe2f3b131a3d12c0fd42353b4"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 65536,
+          "sha256": "3086f625be3607773588226a8c0824c4f5f6868fe2f3b131a3d12c0fd42353b4"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 65536,
+          "sha256": "3086f625be3607773588226a8c0824c4f5f6868fe2f3b131a3d12c0fd42353b4"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 21,
+      "baseline_median_ms": 4.11750507143,
+      "candidate_median_ms": 4.13543940476,
+      "reduction_percent": -0.4355631145287475,
+      "speedup": 0.9956632581027891,
+      "paired_reduction_percent": [
+        4.022443903079731,
+        -8.694778487897125,
+        -3.2134097924348293,
+        -11.725374826647283,
+        1.799005586622482,
+        -0.48457685293950004,
+        -0.38695382954754276,
+        6.5109989463621565
+      ]
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          52.37535505,
+          51.85087475,
+          52.15832445,
+          51.60079895,
+          51.48729085,
+          53.65973925,
+          52.84143685,
+          52.97461795
+        ],
+        [
+          49.83438955,
+          49.08937075,
+          49.880755,
+          49.35952635,
+          49.6349611,
+          50.1144116,
+          51.60914605,
+          50.8024833
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 52.26683975,
+      "candidate_median_ms": 49.857572274999995,
+      "reduction_percent": 4.609552608353384,
+      "speedup": 1.0483230001996724,
+      "paired_reduction_percent": [
+        4.851452553542179,
+        5.325858075325918,
+        4.366646118364715,
+        4.343484297930611,
+        3.5976446214590507,
+        6.607053443704547,
+        2.332053921050792,
+        4.100330939715635
+      ]
+    },
+    {
+      "name": "ppocrv6_tiny_det_736",
+      "shape": [
+        1,
+        3,
+        736,
+        736
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "e555b5d3f0ebf00d64775d3b1403c5605fd3490725398d45fe9d0c0f8669fed1",
+      "round_ms": [
+        [
+          23.2010679,
+          23.61020765,
+          24.86968415,
+          24.29136975,
+          24.7686867,
+          23.5671351,
+          24.84957685,
+          23.51556405
+        ],
+        [
+          20.99184165,
+          20.98871315,
+          22.09539855,
+          22.1887839,
+          21.87964765,
+          22.0166588,
+          20.7056244,
+          20.8790058
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 541696,
+          "sha256": "7b3a53cef10733b669c27de8702454cb718a0f521c6fe849a128f4b60f94040a"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 23.9507887,
+      "candidate_median_ms": 21.43574465,
+      "reduction_percent": 10.500881960517649,
+      "speedup": 1.1173294462620873,
+      "paired_reduction_percent": [
+        9.522088636273507,
+        11.103225091711554,
+        11.155290848356037,
+        8.655690772645707,
+        11.664078459194204,
+        6.578976585066565,
+        16.676148954222526,
+        11.211971120037823
+      ]
+    },
+    {
+      "name": "ppocrv6_tiny_det_1024",
+      "shape": [
+        1,
+        3,
+        1024,
+        1024
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "ff3c1d8ba16742102f6f334bb312303334282961d0f975d99105e1b8bda036a7",
+      "round_ms": [
+        [
+          104.3284462,
+          108.91363575,
+          107.6019825,
+          104.71413,
+          106.9066283,
+          110.38932715,
+          115.52317665,
+          104.6480798
+        ],
+        [
+          99.43256445,
+          102.9865174,
+          98.3590859,
+          98.61172985,
+          101.1130898,
+          102.5275532,
+          103.6692216,
+          101.76998395
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 1048576,
+          "sha256": "153941d8cb81251a88e3a0b9387d09680a59e7d850ed67692a82768abf40cc33"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1048576,
+          "sha256": "153941d8cb81251a88e3a0b9387d09680a59e7d850ed67692a82768abf40cc33"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1048576,
+          "sha256": "153941d8cb81251a88e3a0b9387d09680a59e7d850ed67692a82768abf40cc33"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1048576,
+          "sha256": "153941d8cb81251a88e3a0b9387d09680a59e7d850ed67692a82768abf40cc33"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1048576,
+          "sha256": "153941d8cb81251a88e3a0b9387d09680a59e7d850ed67692a82768abf40cc33"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1048576,
+          "sha256": "153941d8cb81251a88e3a0b9387d09680a59e7d850ed67692a82768abf40cc33"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1048576,
+          "sha256": "153941d8cb81251a88e3a0b9387d09680a59e7d850ed67692a82768abf40cc33"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1048576,
+          "sha256": "153941d8cb81251a88e3a0b9387d09680a59e7d850ed67692a82768abf40cc33"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 107.25430539999999,
+      "candidate_median_ms": 101.441536875,
+      "reduction_percent": 5.419613229810727,
+      "speedup": 1.0573016606812917,
+      "paired_reduction_percent": [
+        4.69275823452262,
+        5.4420351585774736,
+        8.5898943358223,
+        5.827675930650422,
+        5.419250978285694,
+        7.121860557513148,
+        10.261105514708845,
+        2.7502615007370723
+      ]
+    },
+    {
+      "name": "ppocrv6_tiny_det_1024",
+      "shape": [
+        1,
+        3,
+        1024,
+        1024
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+      "input_sha256": "ff3c1d8ba16742102f6f334bb312303334282961d0f975d99105e1b8bda036a7",
+      "round_ms": [
+        [
+          60.16893995,
+          44.8710034,
+          41.04645985,
+          41.48239475,
+          43.02512305,
+          44.57793775,
+          45.6002604,
+          47.38515125
+        ],
+        [
+          59.2959819,
+          55.35572815,
+          37.62711095,
+          38.25020635,
+          37.9228122,
+          40.3490478,
+          41.12780285,
+          46.89066025
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 1048576,
+          "sha256": "153941d8cb81251a88e3a0b9387d09680a59e7d850ed67692a82768abf40cc33"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1048576,
+          "sha256": "153941d8cb81251a88e3a0b9387d09680a59e7d850ed67692a82768abf40cc33"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1048576,
+          "sha256": "153941d8cb81251a88e3a0b9387d09680a59e7d850ed67692a82768abf40cc33"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1048576,
+          "sha256": "153941d8cb81251a88e3a0b9387d09680a59e7d850ed67692a82768abf40cc33"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1048576,
+          "sha256": "153941d8cb81251a88e3a0b9387d09680a59e7d850ed67692a82768abf40cc33"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1048576,
+          "sha256": "153941d8cb81251a88e3a0b9387d09680a59e7d850ed67692a82768abf40cc33"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1048576,
+          "sha256": "153941d8cb81251a88e3a0b9387d09680a59e7d850ed67692a82768abf40cc33"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1048576,
+          "sha256": "153941d8cb81251a88e3a0b9387d09680a59e7d850ed67692a82768abf40cc33"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 44.724470575,
+      "candidate_median_ms": 40.738425325,
+      "reduction_percent": 8.91244814919756,
+      "speedup": 1.0978448533098768,
+      "paired_reduction_percent": [
+        1.4508449886692754,
+        -23.36637016233962,
+        8.330435590537277,
+        7.791711205390328,
+        11.858910534829937,
+        9.486508715850128,
+        9.807964934340596,
+        1.0435568674057927
+      ]
+    },
+    {
+      "name": "control_mobilenetv2",
+      "shape": [
+        1,
+        3,
+        224,
+        224
+      ],
+      "threads": 1,
+      "cpus": [
+        0
+      ],
+      "model_sha256": "a68b309018026daa3504510fdf423657815c54f4087fc4ca9d99600526f0e429",
+      "input_sha256": "8b2d6d28b64f2ffa163347f696208158d42f73d05a67ca4e25e7a99b9c1664ae",
+      "round_ms": [
+        [
+          5.9601397,
+          6.13267865,
+          5.456366,
+          5.7005272,
+          5.8212936,
+          5.6321946,
+          6.20786925,
+          5.5522794
+        ],
+        [
+          5.95915715,
+          5.7691058,
+          5.4304801,
+          5.7208842,
+          5.5781005,
+          5.3250764,
+          5.6971505,
+          5.41925595
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 5.7609104,
+      "candidate_median_ms": 5.6376255,
+      "reduction_percent": 2.140024604444457,
+      "speedup": 1.0218682315808314,
+      "paired_reduction_percent": [
+        0.016485351845019203,
+        5.928451020338388,
+        0.47441648892322386,
+        -0.3571073215824727,
+        4.177647043949129,
+        5.452904627975741,
+        8.226957260738043,
+        2.395834943032582
+      ]
+    },
+    {
+      "name": "control_mobilenetv2",
+      "shape": [
+        1,
+        3,
+        224,
+        224
+      ],
+      "threads": 4,
+      "cpus": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "model_sha256": "a68b309018026daa3504510fdf423657815c54f4087fc4ca9d99600526f0e429",
+      "input_sha256": "8b2d6d28b64f2ffa163347f696208158d42f73d05a67ca4e25e7a99b9c1664ae",
+      "round_ms": [
+        [
+          4.1766702,
+          3.61152625,
+          3.43910455,
+          3.32412175,
+          3.7666628,
+          3.2710717,
+          3.28170625,
+          3.220467
+        ],
+        [
+          3.4420469,
+          3.4616821,
+          3.46787225,
+          3.30598155,
+          4.0516421,
+          3.5632801,
+          3.2607794,
+          3.20296575
+        ]
+      ],
+      "checks": [
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        },
+        {
+          "bitwise_equal": true,
+          "elements": 1000,
+          "sha256": "5dcaf2eb4e265e4c119ad1fa18b3b0f2b87bd0d82df23e0b9e466c7eedb6e09f"
+        }
+      ],
+      "builds": [
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        },
+        {
+          "ready": true,
+          "version": "1.31.0",
+          "build": "ORT Build Info: git-branch=main, git-commit-id=09dfa6a, fp8-kv-cache=1, build type=Release"
+        }
+      ],
+      "iterations_per_round": 20,
+      "baseline_median_ms": 3.38161315,
+      "candidate_median_ms": 3.4518645,
+      "reduction_percent": -2.0774508166317096,
+      "speedup": 0.9796482886277836,
+      "paired_reduction_percent": [
+        17.588731329564887,
+        4.149053326138774,
+        -0.8364880910642913,
+        0.5457140671818128,
+        -7.5658298905864285,
+        -8.933108986880356,
+        0.6376819985030591,
+        0.5434382653199066
+      ]
+    }
+  ]
+}
