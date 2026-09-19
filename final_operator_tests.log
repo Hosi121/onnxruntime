@@ -1,0 +1,243 @@
+Note: Google Test filter = *ConvTranspose*:*Col2Im*
+[==========] Running 84 tests from 5 test suites.
+[----------] Global test environment set-up.
+[----------] 6 tests from ContribOpTest
+[ RUN      ] ContribOpTest.ConvTransposeWithDynamicPads
+[       OK ] ContribOpTest.ConvTransposeWithDynamicPads (10 ms)
+[ RUN      ] ContribOpTest.ConvTransposeWithDynamicPads_InvalidWeightRank0
+[       OK ] ContribOpTest.ConvTransposeWithDynamicPads_InvalidWeightRank0 (0 ms)
+[ RUN      ] ContribOpTest.ConvTransposeWithDynamicPads_InvalidWeightRank1
+[       OK ] ContribOpTest.ConvTransposeWithDynamicPads_InvalidWeightRank1 (0 ms)
+[ RUN      ] ContribOpTest.ConvTransposeWithDynamicPads_InvalidInputRank2
+[       OK ] ContribOpTest.ConvTransposeWithDynamicPads_InvalidInputRank2 (0 ms)
+[ RUN      ] ContribOpTest.ConvTransposeWithDynamicPads_InvalidPadsSize
+[1;31m2026-09-20 05:01:32.281882867 [E:onnxruntime:ConvTransposeWithDynamicPads, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTransposeWithDynamicPads node. Name:'node1' Status Message: Dynamic pads tensor size (3) does not match expected size (2 * spatial_dims = 4).[m
+[       OK ] ContribOpTest.ConvTransposeWithDynamicPads_InvalidPadsSize (0 ms)
+[ RUN      ] ContribOpTest.ConvTransposeWithDynamicPads_NegativePads
+[1;31m2026-09-20 05:01:32.282002701 [E:onnxruntime:ConvTransposeWithDynamicPads, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTransposeWithDynamicPads node. Name:'node1' Status Message: Dynamic pads must be non-negative. Got pads[0] = -1[m
+[       OK ] ContribOpTest.ConvTransposeWithDynamicPads_NegativePads (0 ms)
+[----------] 6 tests from ContribOpTest (11 ms total)
+
+[----------] 60 tests from ConvTransposeTest
+[ RUN      ] ConvTransposeTest.ConvTranspose_1D
+[       OK ] ConvTransposeTest.ConvTranspose_1D (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2x2_Stride2_GroupBiasBatch
+[       OK ] ConvTransposeTest.ConvTranspose_2x2_Stride2_GroupBiasBatch (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_Bias_2
+[       OK ] ConvTransposeTest.ConvTranspose_2D_Bias_2 (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_OutputShape_1
+[       OK ] ConvTransposeTest.ConvTranspose_2D_OutputShape_1 (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_1D_OutputShape_1_group_2_for_transpose_path
+[       OK ] ConvTransposeTest.ConvTranspose_1D_OutputShape_1_group_2_for_transpose_path (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_OutputShape_1_group_2_for_transpose_path
+[       OK ] ConvTransposeTest.ConvTranspose_2D_OutputShape_1_group_2_for_transpose_path (13 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_OutputShape_2
+[       OK ] ConvTransposeTest.ConvTranspose_2D_OutputShape_2 (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_RankPlus2_OutputShape_DynamicRankInput_Runtime
+[       OK ] ConvTransposeTest.ConvTranspose_RankPlus2_OutputShape_DynamicRankInput_Runtime (23 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_OutputShape_2_OpSet22_CUDA
+/home/hosi/churin/.tools/onnxruntime/onnxruntime/test/providers/cpu/nn/conv_transpose_op_test.cc:580: Skipped
+CUDA execution provider is not available.
+
+[  SKIPPED ] ConvTransposeTest.ConvTranspose_2D_OutputShape_2_OpSet22_CUDA (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_OutputShapeWithBatchSize
+[       OK ] ConvTransposeTest.ConvTranspose_2D_OutputShapeWithBatchSize (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_InvalidKernelShape
+[       OK ] ConvTransposeTest.ConvTranspose_InvalidKernelShape (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_InvalidBiasShape_1
+[1;31m2026-09-20 05:01:32.320870385 [E:onnxruntime:ConvTranspose, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTranspose node. Name:'node1' Status Message: Bias shape is not compatible with number of output channels. It should be a 1-D tensor with size num_output_channels(M). Bias: {2} num_output_channels: 1[m
+[1;31m2026-09-20 05:01:32.320968270 [E:onnxruntime:ConvTranspose, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTranspose node. Name:'node1' Status Message: Bias shape is not compatible with number of output channels. It should be a 1-D tensor with size num_output_channels(M). Bias: {2} num_output_channels: 1[m
+[       OK ] ConvTransposeTest.ConvTranspose_InvalidBiasShape_1 (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_InvalidBiasShape_2
+[1;31m2026-09-20 05:01:32.321084408 [E:onnxruntime:ConvTranspose, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTranspose node. Name:'node1' Status Message: Bias shape is not compatible with number of output channels. It should be a 1-D tensor with size num_output_channels(M). Bias: {1,2} num_output_channels: 1[m
+[1;31m2026-09-20 05:01:32.321171232 [E:onnxruntime:ConvTranspose, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTranspose node. Name:'node1' Status Message: Bias shape is not compatible with number of output channels. It should be a 1-D tensor with size num_output_channels(M). Bias: {1,2} num_output_channels: 1[m
+[       OK ] ConvTransposeTest.ConvTranspose_InvalidBiasShape_2 (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_onnx
+[       OK ] ConvTransposeTest.ConvTranspose_onnx (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_onnx2
+[       OK ] ConvTransposeTest.ConvTranspose_onnx2 (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_onnx_group
+[       OK ] ConvTransposeTest.ConvTranspose_onnx_group (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_Dilation_1
+[       OK ] ConvTransposeTest.ConvTranspose_2D_Dilation_1 (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_Dilation_2
+[       OK ] ConvTransposeTest.ConvTranspose_2D_Dilation_2 (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_Dilation_3
+[       OK ] ConvTransposeTest.ConvTranspose_2D_Dilation_3 (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_Dilation_4
+[       OK ] ConvTransposeTest.ConvTranspose_2D_Dilation_4 (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_Dilation_AsymmetricPads_1
+[       OK ] ConvTransposeTest.ConvTranspose_2D_Dilation_AsymmetricPads_1 (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_Dilation_AsymmetricPads_2
+[       OK ] ConvTransposeTest.ConvTranspose_2D_Dilation_AsymmetricPads_2 (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_Dilation_AsymmetricPads_3
+[       OK ] ConvTransposeTest.ConvTranspose_2D_Dilation_AsymmetricPads_3 (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_Dilation_AsymmetricPads_4
+[       OK ] ConvTransposeTest.ConvTranspose_2D_Dilation_AsymmetricPads_4 (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_Dilation_Group_1
+[       OK ] ConvTransposeTest.ConvTranspose_2D_Dilation_Group_1 (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_DefaultStridesAndDilations
+[       OK ] ConvTransposeTest.ConvTranspose_DefaultStridesAndDilations (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_NonDefaultStridesAndDilations
+[       OK ] ConvTransposeTest.ConvTranspose_2D_NonDefaultStridesAndDilations (13 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_NonDefaultStridesAndDilations_T
+[       OK ] ConvTransposeTest.ConvTranspose_2D_NonDefaultStridesAndDilations_T (0 ms)
+[ RUN      ] ConvTransposeTest.DimWithZero
+[       OK ] ConvTransposeTest.DimWithZero (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_3D
+[       OK ] ConvTransposeTest.ConvTranspose_3D (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_1D_AsymmetricPads
+[       OK ] ConvTransposeTest.ConvTranspose_1D_AsymmetricPads (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_1D_AutoPad_SameUpper
+[       OK ] ConvTransposeTest.ConvTranspose_1D_AutoPad_SameUpper (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_1D_AutoPad_SameLower
+[       OK ] ConvTransposeTest.ConvTranspose_1D_AutoPad_SameLower (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_AutoPad_with_non_default_strides
+[       OK ] ConvTransposeTest.ConvTranspose_AutoPad_with_non_default_strides (0 ms)
+[ RUN      ] ConvTransposeTest.SharedPrepackedWeights
+[       OK ] ConvTransposeTest.SharedPrepackedWeights (46 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_ZeroStride
+[1;31m2026-09-20 05:01:32.385820183 [E:onnxruntime:ConvTranspose, inference_session.cc:3287 operator()] Exception during initialization: /home/hosi/churin/.tools/onnxruntime/onnxruntime/core/providers/cpu/nn/conv_attributes.h:37 onnxruntime::ConvAttributes::ConvAttributes(const KernelInfoType&) [with KernelInfoType = onnxruntime::OpKernelInfo] stride > 0 was false. All stride values must be positive, got: 0
+[m
+[       OK ] ConvTransposeTest.ConvTranspose_ZeroStride (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_ZeroDilation
+[1;31m2026-09-20 05:01:32.385937802 [E:onnxruntime:ConvTranspose, inference_session.cc:3287 operator()] Exception during initialization: /home/hosi/churin/.tools/onnxruntime/onnxruntime/core/providers/cpu/nn/conv_attributes.h:61 onnxruntime::ConvAttributes::ConvAttributes(const KernelInfoType&) [with KernelInfoType = onnxruntime::OpKernelInfo] dilation > 0 was false. All dilation values must be positive, got: 0
+[m
+[       OK ] ConvTransposeTest.ConvTranspose_ZeroDilation (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_ZeroStride_Dml
+/home/hosi/churin/.tools/onnxruntime/onnxruntime/test/providers/cpu/nn/conv_transpose_op_test.cc:1635: Skipped
+DML EP not available
+
+[  SKIPPED ] ConvTransposeTest.ConvTranspose_ZeroStride_Dml (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_ZeroDilation_Dml
+/home/hosi/churin/.tools/onnxruntime/onnxruntime/test/providers/cpu/nn/conv_transpose_op_test.cc:1658: Skipped
+DML EP not available
+
+[  SKIPPED ] ConvTransposeTest.ConvTranspose_ZeroDilation_Dml (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_InvalidInputRank0
+[1;31m2026-09-20 05:01:32.386057660 [E:onnxruntime:ConvTranspose, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTranspose node. Name:'node1' Status Message: Input X must have at least 3 dimensions (N x C x D1...Dn). X: {}[m
+[       OK ] ConvTransposeTest.ConvTranspose_InvalidInputRank0 (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_InvalidInputRank1
+[1;31m2026-09-20 05:01:32.386133494 [E:onnxruntime:ConvTranspose, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTranspose node. Name:'node1' Status Message: Input X must have at least 3 dimensions (N x C x D1...Dn). X: {2}[m
+[       OK ] ConvTransposeTest.ConvTranspose_InvalidInputRank1 (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_InvalidInputRank2
+[1;31m2026-09-20 05:01:32.386200277 [E:onnxruntime:ConvTranspose, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTranspose node. Name:'node1' Status Message: Input X must have at least 3 dimensions (N x C x D1...Dn). X: {1,1}[m
+[       OK ] ConvTransposeTest.ConvTranspose_InvalidInputRank2 (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_InvalidWeightRank0
+[1;31m2026-09-20 05:01:32.386265381 [E:onnxruntime:ConvTranspose, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTranspose node. Name:'node1' Status Message: Filter W must have at least 3 dimensions (C x M/group x k1...kn). W: {}[m
+[       OK ] ConvTransposeTest.ConvTranspose_InvalidWeightRank0 (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_InvalidOutputPaddingSize
+[1;31m2026-09-20 05:01:32.386335066 [E:onnxruntime:ConvTranspose, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTranspose node. Name:'node1' Status Message: output_padding size (3) does not match the number of spatial dimensions (2).[m
+[       OK ] ConvTransposeTest.ConvTranspose_InvalidOutputPaddingSize (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_OutputPaddingExceedsStride
+[1;31m2026-09-20 05:01:32.386398888 [E:onnxruntime:ConvTranspose, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTranspose node. Name:'node1' Status Message: output_padding[0] (2) must be less than max(stride, dilation) (2) for spatial dimension 0.[m
+[       OK ] ConvTransposeTest.ConvTranspose_OutputPaddingExceedsStride (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_InconsistentOutputShape
+[1;31m2026-09-20 05:01:32.386467872 [E:onnxruntime:ConvTranspose, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTranspose node. Name:'node1' Status Message: Explicit output_shape is inconsistent with input spatial dimensions and convolution parameters. Expected input size 98 but got 3 (output_size=100, kernel=3, stride=1, dilation=1, output_padding=0).[m
+[       OK ] ConvTransposeTest.ConvTranspose_InconsistentOutputShape (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_ZeroOutputShape
+[1;31m2026-09-20 05:01:32.386528053 [E:onnxruntime:ConvTranspose, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTranspose node. Name:'node1' Status Message: Explicit output size must be positive. Got: 0[m
+[       OK ] ConvTransposeTest.ConvTranspose_ZeroOutputShape (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_1D_InconsistentOutputShape
+[1;31m2026-09-20 05:01:32.386592117 [E:onnxruntime:ConvTranspose, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTranspose node. Name:'node1' Status Message: Explicit output_shape is inconsistent with input spatial dimensions and convolution parameters. Expected input size 24 but got 5 (output_size=50, kernel=3, stride=2, dilation=1, output_padding=0).[m
+[       OK ] ConvTransposeTest.ConvTranspose_1D_InconsistentOutputShape (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_3D_InconsistentOutputShape
+[1;31m2026-09-20 05:01:32.386654540 [E:onnxruntime:ConvTranspose, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTranspose node. Name:'node1' Status Message: Explicit output_shape is inconsistent with input spatial dimensions and convolution parameters. Expected input size 9 but got 2 (output_size=10, kernel=2, stride=1, dilation=1, output_padding=0).[m
+[       OK ] ConvTransposeTest.ConvTranspose_3D_InconsistentOutputShape (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_3D_ValidOutputShape
+[       OK ] ConvTransposeTest.ConvTranspose_3D_ValidOutputShape (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_Group2_OutputShape
+[       OK ] ConvTransposeTest.ConvTranspose_2D_Group2_OutputShape (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_LargeBatch_OutputShape
+[       OK ] ConvTransposeTest.ConvTranspose_2D_LargeBatch_OutputShape (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_Stride2_BoundaryOutputShape
+[1;31m2026-09-20 05:01:32.387289854 [E:onnxruntime:ConvTranspose, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTranspose node. Name:'node1' Status Message: Explicit output_shape is inconsistent with input spatial dimensions and convolution parameters. Expected input size 4 but got 3 (output_size=9, kernel=3, stride=2, dilation=1, output_padding=0).[m
+[       OK ] ConvTransposeTest.ConvTranspose_2D_Stride2_BoundaryOutputShape (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_Stride2_InconsistentOutputShape
+[1;31m2026-09-20 05:01:32.387355640 [E:onnxruntime:ConvTranspose, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTranspose node. Name:'node1' Status Message: Explicit output_shape is inconsistent with input spatial dimensions and convolution parameters. Expected input size 9 but got 3 (output_size=20, kernel=3, stride=2, dilation=1, output_padding=0).[m
+[       OK ] ConvTransposeTest.ConvTranspose_2D_Stride2_InconsistentOutputShape (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_Dilation_InconsistentOutputShape
+[1;31m2026-09-20 05:01:32.387416169 [E:onnxruntime:ConvTranspose, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTranspose node. Name:'node1' Status Message: Explicit output_shape is inconsistent with input spatial dimensions and convolution parameters. Expected input size 26 but got 3 (output_size=30, kernel=3, stride=1, dilation=2, output_padding=0).[m
+[       OK ] ConvTransposeTest.ConvTranspose_2D_Dilation_InconsistentOutputShape (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_OutputShape_RequiringPadding
+[       OK ] ConvTransposeTest.ConvTranspose_2D_OutputShape_RequiringPadding (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_ImplicitPath_OutputPaddingExceedsStride
+[1;31m2026-09-20 05:01:32.387655766 [E:onnxruntime:ConvTranspose, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTranspose node. Name:'node1' Status Message: Computed output shape is inconsistent with input spatial dimensions. output_padding (2) may be too large for stride (2). Expected input size 4 but got 3.[m
+[       OK ] ConvTransposeTest.ConvTranspose_ImplicitPath_OutputPaddingExceedsStride (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_2D_ValidOutputPadding_ConsistencyCheck
+[       OK ] ConvTransposeTest.ConvTranspose_2D_ValidOutputPadding_ConsistencyCheck (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_OverflowInPadComputation
+[1;31m2026-09-20 05:01:32.387934454 [E:onnxruntime:ConvTranspose, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTranspose node. Name:'node1' Status Message: /home/hosi/churin/.tools/onnxruntime/onnxruntime/core/common/safeint.h:17 static void SafeIntExceptionHandler<onnxruntime::OnnxRuntimeException>::SafeIntOnOverflow() Integer overflow
+[m
+[       OK ] ConvTransposeTest.ConvTranspose_OverflowInPadComputation (0 ms)
+[ RUN      ] ConvTransposeTest.ConvTranspose_OverflowInExplicitOutputShapePath
+[1;31m2026-09-20 05:01:32.396073471 [E:onnxruntime:ConvTranspose, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running ConvTranspose node. Name:'node1' Status Message: /home/hosi/churin/.tools/onnxruntime/onnxruntime/core/common/safeint.h:17 static void SafeIntExceptionHandler<onnxruntime::OnnxRuntimeException>::SafeIntOnOverflow() Integer overflow
+[m
+[       OK ] ConvTransposeTest.ConvTranspose_OverflowInExplicitOutputShapePath (8 ms)
+[----------] 60 tests from ConvTransposeTest (114 ms total)
+
+[----------] 3 tests from ConvTransposeTest/0, where TypeParam = float
+[ RUN      ] ConvTransposeTest/0.ConvTranspose_2D_outputpadding_strides2
+[       OK ] ConvTransposeTest/0.ConvTranspose_2D_outputpadding_strides2 (0 ms)
+[ RUN      ] ConvTransposeTest/0.ConvTranspose_2D_C2
+[       OK ] ConvTransposeTest/0.ConvTranspose_2D_C2 (1 ms)
+[ RUN      ] ConvTransposeTest/0.ConvTranspose_2D_Bias_1
+[       OK ] ConvTransposeTest/0.ConvTranspose_2D_Bias_1 (0 ms)
+[----------] 3 tests from ConvTransposeTest/0 (1 ms total)
+
+[----------] 3 tests from ConvTransposeTest/1, where TypeParam = onnxruntime::MLFloat16
+[ RUN      ] ConvTransposeTest/1.ConvTranspose_2D_outputpadding_strides2
+[0;93m2026-09-20 05:01:32.398019400 [W:onnxruntime:Default, base_tester.cc:900 ExecuteModelForEps] registered execution providers CPUExecutionProvider  were unable to run the model.[m
+[0;93m2026-09-20 05:01:32.398049624 [W:onnxruntime:Default, base_tester.cc:900 ExecuteModelForEps] registered execution providers CPUExecutionProvider  were unable to run the model.[m
+[       OK ] ConvTransposeTest/1.ConvTranspose_2D_outputpadding_strides2 (0 ms)
+[ RUN      ] ConvTransposeTest/1.ConvTranspose_2D_C2
+[0;93m2026-09-20 05:01:32.398083179 [W:onnxruntime:Default, base_tester.cc:900 ExecuteModelForEps] registered execution providers CPUExecutionProvider  were unable to run the model.[m
+[0;93m2026-09-20 05:01:32.398105267 [W:onnxruntime:Default, base_tester.cc:900 ExecuteModelForEps] registered execution providers CPUExecutionProvider  were unable to run the model.[m
+[       OK ] ConvTransposeTest/1.ConvTranspose_2D_C2 (0 ms)
+[ RUN      ] ConvTransposeTest/1.ConvTranspose_2D_Bias_1
+[0;93m2026-09-20 05:01:32.398141768 [W:onnxruntime:Default, base_tester.cc:900 ExecuteModelForEps] registered execution providers CPUExecutionProvider  were unable to run the model.[m
+[0;93m2026-09-20 05:01:32.398168396 [W:onnxruntime:Default, base_tester.cc:900 ExecuteModelForEps] registered execution providers CPUExecutionProvider  were unable to run the model.[m
+[       OK ] ConvTransposeTest/1.ConvTranspose_2D_Bias_1 (0 ms)
+[----------] 3 tests from ConvTransposeTest/1 (0 ms total)
+
+[----------] 12 tests from Col2ImOpTest
+[ RUN      ] Col2ImOpTest.Simple4dNCHW
+[       OK ] Col2ImOpTest.Simple4dNCHW (0 ms)
+[ RUN      ] Col2ImOpTest.With2Images3channelsNonSquare4dNCHW
+[       OK ] Col2ImOpTest.With2Images3channelsNonSquare4dNCHW (0 ms)
+[ RUN      ] Col2ImOpTest.With2Images2channelsNonSquareDilationPadStride4dNCHW
+[       OK ] Col2ImOpTest.With2Images2channelsNonSquareDilationPadStride4dNCHW (0 ms)
+[ RUN      ] Col2ImOpTest.With3channels4dNCHW
+[       OK ] Col2ImOpTest.With3channels4dNCHW (0 ms)
+[ RUN      ] Col2ImOpTest.With2Images3channels4dNCHW
+[       OK ] Col2ImOpTest.With2Images3channels4dNCHW (0 ms)
+[ RUN      ] Col2ImOpTest.Simple5dNCHWD
+[       OK ] Col2ImOpTest.Simple5dNCHWD (0 ms)
+[ RUN      ] Col2ImOpTest.WithStrides5dNCHWD
+[       OK ] Col2ImOpTest.WithStrides5dNCHWD (0 ms)
+[ RUN      ] Col2ImOpTest.ImageShapeLargerThanColumnTensor
+[1;31m2026-09-20 05:01:32.398919574 [E:onnxruntime:Col2Im, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running Col2Im node. Name:'node1' Status Message: col2im.cc:92 Compute 'input' dim[2] (4) does not match the number of sliding blocks (16) implied by 'image_shape', 'block_shape', 'pads', 'strides', and 'dilations'.[m
+[       OK ] Col2ImOpTest.ImageShapeLargerThanColumnTensor (0 ms)
+[ RUN      ] Col2ImOpTest.StridesMustBePositive
+[1;31m2026-09-20 05:01:32.399052267 [E:onnxruntime:Col2Im, inference_session.cc:3287 operator()] Exception during initialization: /home/hosi/churin/.tools/onnxruntime/onnxruntime/core/providers/cpu/tensor/col2im.h:21 onnxruntime::Col2Im<T>::Col2Im(const onnxruntime::OpKernelInfo&) [with T = float] s > 0 was false. All stride values must be positive, got: 0
+[m
+[       OK ] Col2ImOpTest.StridesMustBePositive (0 ms)
+[ RUN      ] Col2ImOpTest.DilationsMustBePositive
+[1;31m2026-09-20 05:01:32.399137961 [E:onnxruntime:Col2Im, inference_session.cc:3287 operator()] Exception during initialization: /home/hosi/churin/.tools/onnxruntime/onnxruntime/core/providers/cpu/tensor/col2im.h:24 onnxruntime::Col2Im<T>::Col2Im(const onnxruntime::OpKernelInfo&) [with T = float] d > 0 was false. All dilation values must be positive, got: 0
+[m
+[       OK ] Col2ImOpTest.DilationsMustBePositive (0 ms)
+[ RUN      ] Col2ImOpTest.PaddedImageSmallerThanDilatedKernel
+[1;31m2026-09-20 05:01:32.399216083 [E:onnxruntime:Col2Im, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running Col2Im node. Name:'node1' Status Message: col2im.cc:78 Compute Padded image extent is smaller than the dilated kernel for spatial dimension 1.[m
+[       OK ] Col2ImOpTest.PaddedImageSmallerThanDilatedKernel (0 ms)
+[ RUN      ] Col2ImOpTest.ColumnChannelsNotMultipleOfBlock
+[1;31m2026-09-20 05:01:32.399293556 [E:onnxruntime:Col2Im, sequential_executor.cc:697 ExecuteKernel] Non-zero status code returned while running Col2Im node. Name:'node1' Status Message: col2im.cc:89 Compute 'input' dim[1] (3) must be a positive multiple of prod(block_shape) (4).[m
+[       OK ] Col2ImOpTest.ColumnChannelsNotMultipleOfBlock (0 ms)
+[----------] 12 tests from Col2ImOpTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 84 tests from 5 test suites ran. (128 ms total)
+[  PASSED  ] 81 tests.
+[  SKIPPED ] 3 tests, listed below:
+[  SKIPPED ] ConvTransposeTest.ConvTranspose_2D_OutputShape_2_OpSet22_CUDA
+[  SKIPPED ] ConvTransposeTest.ConvTranspose_ZeroStride_Dml
+[  SKIPPED ] ConvTransposeTest.ConvTranspose_ZeroDilation_Dml

@@ -1,0 +1,86 @@
+{
+  "model": "ppocrv6_tiny_det_736",
+  "model_sha256": "193bab7a04fca699a6c82e6abb5b81bdb28177f0abd4062552b04908dafb19f8",
+  "library_sha256": "6c4b9517f746f46970b17ab13efce96145c94962897d659813214c1217768639",
+  "nodes": {
+    "ConvTranspose.0_kernel_time": {
+      "calls": 5,
+      "args": {
+        "mem_bytes_requested_in_use": "10839540",
+        "thread_scheduling_stats": "",
+        "provider": "CPUExecutionProvider",
+        "node_index": "236",
+        "op_name": "ConvTranspose",
+        "mem_in_use_peak": "67114484",
+        "output_size": "8667136",
+        "activation_size": "2166784",
+        "mem_in_use_delta": "16777216",
+        "mem_arena_held": "68158708",
+        "mem_bytes_in_use": "19355380",
+        "mem_arena_held_delta": "0",
+        "output_type_shape": [
+          {
+            "float": [
+              1,
+              16,
+              368,
+              368
+            ]
+          }
+        ],
+        "parameter_size": "0",
+        "mem_requested_in_use_delta": "8667136",
+        "input_type_shape": [
+          {
+            "float": [
+              1,
+              16,
+              184,
+              184
+            ]
+          }
+        ]
+      }
+    },
+    "ConvTranspose.2_kernel_time": {
+      "calls": 5,
+      "args": {
+        "mem_arena_held_delta": "0",
+        "mem_in_use_peak": "67114484",
+        "activation_size": "8667136",
+        "op_name": "ConvTranspose",
+        "mem_requested_in_use_delta": "2166784",
+        "mem_bytes_requested_in_use": "10839540",
+        "provider": "CPUExecutionProvider",
+        "node_index": "239",
+        "parameter_size": "0",
+        "thread_scheduling_stats": "",
+        "mem_in_use_delta": "2166784",
+        "mem_arena_held": "68158708",
+        "input_type_shape": [
+          {
+            "float": [
+              1,
+              16,
+              368,
+              368
+            ]
+          }
+        ],
+        "output_size": "2166784",
+        "mem_bytes_in_use": "18949620",
+        "output_type_shape": [
+          {
+            "float": [
+              1,
+              1,
+              736,
+              736
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "scope": "Node names, shapes, and CPU placement only. These are not benchmark times."
+}

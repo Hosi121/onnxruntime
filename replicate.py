@@ -42,7 +42,10 @@ def main():
     selected = {
         "convtranspose_16_16_184_184",
         "fallback_dilation",
+        "fallback_padding_stride1",
+        "fallback_dilation_stride1",
         "ppocrv6_tiny_det_736",
+        "ppocrv6_tiny_det_1024",
         "control_mobilenetv2",
     }
     fixtures = [

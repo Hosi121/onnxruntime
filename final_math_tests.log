@@ -1,0 +1,32 @@
+Note: Google Test filter = MathTest.*:*MathGemmTest*
+[==========] Running 10 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 6 tests from MathTest
+[ RUN      ] MathTest.GemvNoTrans
+[       OK ] MathTest.GemvNoTrans (0 ms)
+[ RUN      ] MathTest.GemvTrans
+[       OK ] MathTest.GemvTrans (0 ms)
+[ RUN      ] MathTest.Col2im2dLayouts
+[       OK ] MathTest.Col2im2dLayouts (0 ms)
+[ RUN      ] MathTest.Col2im2x2SpecialValues
+[       OK ] MathTest.Col2im2x2SpecialValues (0 ms)
+[ RUN      ] MathTest.HalfFloatConversion
+[       OK ] MathTest.HalfFloatConversion (0 ms)
+[ RUN      ] MathTest.HalfDoubleConversion
+[       OK ] MathTest.HalfDoubleConversion (0 ms)
+[----------] 6 tests from MathTest (0 ms total)
+
+[----------] 4 tests from MathGemmTests/MathGemmTest
+[ RUN      ] MathGemmTests/MathGemmTest.GemmNoTransNoTrans/0
+[       OK ] MathGemmTests/MathGemmTest.GemmNoTransNoTrans/0 (0 ms)
+[ RUN      ] MathGemmTests/MathGemmTest.GemmNoTransNoTrans/1
+[       OK ] MathGemmTests/MathGemmTest.GemmNoTransNoTrans/1 (16 ms)
+[ RUN      ] MathGemmTests/MathGemmTest.GemmNoTransTrans/0
+[       OK ] MathGemmTests/MathGemmTest.GemmNoTransTrans/0 (0 ms)
+[ RUN      ] MathGemmTests/MathGemmTest.GemmNoTransTrans/1
+[       OK ] MathGemmTests/MathGemmTest.GemmNoTransTrans/1 (14 ms)
+[----------] 4 tests from MathGemmTests/MathGemmTest (31 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 2 test suites ran. (31 ms total)
+[  PASSED  ] 10 tests.

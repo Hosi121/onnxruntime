@@ -1,0 +1,49 @@
+{
+  "base": "09dfa6ad06ed8072b2fbe57687d4f71c7914b025",
+  "baseline_source_sha256": "7bd3347b95de34f6c246c39173f48f5ce99c0cc1ba26644399d1f23c8878a878",
+  "compile": {
+    "directory": "/home/hosi/churin/.tools/onnxruntime-build/Release",
+    "command": "/usr/bin/c++ -DCPUINFO_SUPPORTED -DCPUINFO_SUPPORTED_PLATFORM=1 -DEIGEN_MPL2_ONLY -DEIGEN_USE_THREADS -DONLY_C_LOCALE=0 -DONNX_ML=1 -DONNX_NAMESPACE=onnx -DONNX_USE_LITE_PROTO=1 -DORT_ENABLE_GQA_VALUE_LAYOUT -DORT_ENABLE_STREAM -DPLATFORM_POSIX -DUSE_DX_INTEROP=0 -D_GNU_SOURCE -D__ONNX_NO_DOC_STRINGS -I/home/hosi/churin/.tools/onnxruntime/include/onnxruntime -I/home/hosi/churin/.tools/onnxruntime/include/onnxruntime/core/session -I/home/hosi/churin/.tools/onnxruntime-build/Release/_deps/pytorch_cpuinfo-src/include -I/home/hosi/churin/.tools/onnxruntime-build/Release -I/home/hosi/churin/.tools/onnxruntime/onnxruntime -I/home/hosi/churin/.tools/onnxruntime-build/Release/_deps/safeint-src -I/home/hosi/churin/.tools/onnxruntime-build/Release/_deps/gsl-src/include -I/home/hosi/churin/.tools/onnxruntime-build/Release/_deps/abseil_cpp-src -I/home/hosi/churin/.tools/onnxruntime-build/Release/_deps/date-src/include -I/home/hosi/churin/.tools/onnxruntime-build/Release/_deps/onnx-src -I/home/hosi/churin/.tools/onnxruntime-build/Release/_deps/onnx-build -I/home/hosi/churin/.tools/onnxruntime-build/Release/_deps/protobuf-src/src -I/home/hosi/churin/.tools/onnxruntime-build/Release/_deps/protobuf-src/third_party/utf8_range -I/home/hosi/churin/.tools/onnxruntime-build/Release/_deps/mp11-src/include -I/home/hosi/churin/.tools/onnxruntime-build/Release/_deps/eigen3-src  -ffunction-sections -fdata-sections -O3 -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wno-deprecated-copy -Wno-nonnull-compare -Wno-interference-size -Wno-error=comment -Werror -o CMakeFiles/onnxruntime_util.dir/home/hosi/churin/.tools/onnxruntime/onnxruntime/core/util/math_cpu.cc.o -c /home/hosi/churin/.tools/onnxruntime/onnxruntime/core/util/math_cpu.cc",
+    "file": "/home/hosi/churin/.tools/onnxruntime/onnxruntime/core/util/math_cpu.cc",
+    "output": "/home/hosi/churin/.tools/onnxruntime-build/Release/CMakeFiles/onnxruntime_util.dir/home/hosi/churin/.tools/onnxruntime/onnxruntime/core/util/math_cpu.cc.o"
+  },
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "build_command": "python tools/ci_build/build.py --build_dir /home/hosi/churin/.tools/onnxruntime-build --config Release --update --build --build_shared_lib --parallel 10 --cmake_generator Ninja --skip_submodule_sync --skip_tests --targets onnxruntime --cmake_extra_defines onnxruntime_BUILD_UNIT_TESTS=ON CMAKE_EXPORT_COMPILE_COMMANDS=ON",
+  "baseline_library": "/home/hosi/churin/.tools/onnxruntime-build/baseline.so",
+  "baseline_library_sha256": "f57b7988360f59abf17ddc5f318939669f8e95b11cce5678e336fcaaf42a02ac",
+  "baseline_library_bytes": 36763160,
+  "baseline_symbol": {
+    "address": "000000000116ba80",
+    "size": 1863,
+    "name": "_ZN11onnxruntime4math6Col2imIfNS_11CPUMathUtilELi2EEEvPKT_lllllllllllllPS3_PT0_"
+  },
+  "candidate_symbol": {
+    "address": "000000000116ba80",
+    "size": 3824,
+    "name": "_ZN11onnxruntime4math6Col2imIfNS_11CPUMathUtilELi2EEEvPKT_lllllllllllllPS3_PT0_"
+  },
+  "candidate_library_sha256": "bf24ba743a161e52a264d8731fbba1e27600b9f4f2e57736a1f9bc4d99a7cfe7",
+  "candidate_library_bytes": 36763160,
+  "candidate_vector_instructions": [
+    " 116c0ea:\t0f 58 c6             \taddps  %xmm6,%xmm0",
+    " 116c131:\t0f 58 c1             \taddps  %xmm1,%xmm0",
+    " 116c62c:\t0f 58 ca             \taddps  %xmm2,%xmm1",
+    " 116c62f:\t0f 58 e2             \taddps  %xmm2,%xmm4",
+    " 116c635:\t0f 15 cc             \tunpckhps %xmm4,%xmm1",
+    " 116c638:\t0f 14 ec             \tunpcklps %xmm4,%xmm5",
+    " 116c64e:\t0f 58 ca             \taddps  %xmm2,%xmm1",
+    " 116c651:\t0f 58 e2             \taddps  %xmm2,%xmm4",
+    " 116c657:\t0f 15 cc             \tunpckhps %xmm4,%xmm1",
+    " 116c65a:\t0f 14 ec             \tunpcklps %xmm4,%xmm5",
+    " 116c70a:\t0f 58 cb             \taddps  %xmm3,%xmm1",
+    " 116c726:\t0f 58 e3             \taddps  %xmm3,%xmm4",
+    " 116c729:\t0f 14 ec             \tunpcklps %xmm4,%xmm5",
+    " 116c72c:\t0f 14 cc             \tunpcklps %xmm4,%xmm1",
+    " 116c763:\t0f 58 cb             \taddps  %xmm3,%xmm1",
+    " 116c766:\t0f 58 e3             \taddps  %xmm3,%xmm4",
+    " 116c76c:\t0f 14 ec             \tunpcklps %xmm4,%xmm5",
+    " 116c76f:\t0f 14 cc             \tunpcklps %xmm4,%xmm1"
+  ],
+  "candidate_source_sha256": "dd639fbfe4ad55523f923fbb3ec67b434a939ca037adfe53d3b00f40c36ebd6f"
+}

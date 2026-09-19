@@ -1,0 +1,21 @@
+{
+  "checks": 1198,
+  "values": 4066230,
+  "bitwise_equal": true,
+  "guards_unchanged": true,
+  "base": "09dfa6ad06ed8072b2fbe57687d4f71c7914b025",
+  "candidate_sha256": "53d729cc8498391034a6cc1aa38c4a0cc03fc412cdb66382d4c917b89db0a65b",
+  "harness_sha256": "81818ff2785c7daef9553ce517f2196e816c22194365d3b53fb0f37b6ad7e776",
+  "flags": [
+    "-std=c++20",
+    "-O2",
+    "-g",
+    "-fno-omit-frame-pointer",
+    "-fsanitize=address,undefined",
+    "-fno-sanitize-recover=all",
+    "-fno-fast-math",
+    "-ffp-contract=off"
+  ],
+  "stderr": "",
+  "scope": "Extracted Col2im bodies with small-input helper replacements. Not a full ASan runtime build."
+}

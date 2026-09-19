@@ -1,0 +1,219 @@
+diff --git a/onnxruntime/core/util/math_cpu.cc b/onnxruntime/core/util/math_cpu.cc
+index e1e994c..90ad36f 100644
+--- a/onnxruntime/core/util/math_cpu.cc
++++ b/onnxruntime/core/util/math_cpu.cc
+@@ -886,12 +886,33 @@ template struct Im2col<uint8_t, StorageOrder::NHWC>;
+ template struct Im2col<MLFloat16, StorageOrder::NHWC>;
+ template struct Im2col<float, StorageOrder::NHWC>;
+ 
+-template <>
+-void Col2im<float, CPUMathUtil, StorageOrder::NCHW>(const float* data_col, int64_t channels, int64_t height,
+-                                                    int64_t width, int64_t kernel_h, int64_t kernel_w,
+-                                                    int64_t dilation_h, int64_t dilation_w, int64_t pad_t,
+-                                                    int64_t pad_l, int64_t pad_b, int64_t pad_r, int64_t stride_h,
+-                                                    int64_t stride_w, float* data_im, CPUMathUtil* context) {
++// Keep this loop separate to limit its effect on code generation for the general case.
++static EIGEN_DONT_INLINE void Col2im2x2Stride2(const float* data_col, int64_t channels,
++                                               int64_t output_h, int64_t output_w, float* data_im) {
++  const int64_t plane = output_h * output_w;
++  const int64_t width = 2 * output_w;
++  // Each output has one input value. Interleave the four column planes so
++  // adjacent output values are written together, without an output read.
++  for (int64_t c = 0; c < channels; ++c) {
++    for (int64_t h = 0; h < output_h; ++h) {
++      const float* src = data_col + c * 4 * plane + h * output_w;
++      float* dst = data_im + c * 4 * plane + h * 2 * width;
++      for (int64_t w = 0; w < output_w; ++w) {
++        // Keep the addition to positive zero for signed-zero behavior.
++        dst[2 * w] = 0.0f + src[w];
++        dst[2 * w + 1] = 0.0f + src[plane + w];
++        dst[width + 2 * w] = 0.0f + src[2 * plane + w];
++        dst[width + 2 * w + 1] = 0.0f + src[3 * plane + w];
++      }
++    }
++  }
++}
++
++static EIGEN_DONT_INLINE void Col2imNCHWGeneral(const float* data_col, int64_t channels, int64_t height,
++                                                int64_t width, int64_t kernel_h, int64_t kernel_w,
++                                                int64_t dilation_h, int64_t dilation_w, int64_t pad_t,
++                                                int64_t pad_l, int64_t pad_b, int64_t pad_r, int64_t stride_h,
++                                                int64_t stride_w, float* data_im, CPUMathUtil* context) {
+   const int64_t output_h =
+       (height + pad_b + pad_t - (dilation_h * (kernel_h - 1) + 1)) / stride_h + 1;
+   const int64_t output_w =
+@@ -899,6 +920,7 @@ void Col2im<float, CPUMathUtil, StorageOrder::NCHW>(const float* data_col, int64
+   const int64_t output_hw = output_h * output_w;
+   const int64_t hw = height * width;
+   const int64_t hwc = hw * channels;
++
+   Set<float, CPUMathUtil>(narrow<ptrdiff_t>(hwc), 0, data_im, context);
+ 
+   // Fast path for zero padding and no dilation
+@@ -977,6 +999,23 @@ void Col2im<float, CPUMathUtil, StorageOrder::NCHW>(const float* data_col, int64
+   }
+ }
+ 
++template <>
++void Col2im<float, CPUMathUtil, StorageOrder::NCHW>(const float* data_col, int64_t channels, int64_t height,
++                                                    int64_t width, int64_t kernel_h, int64_t kernel_w,
++                                                    int64_t dilation_h, int64_t dilation_w, int64_t pad_t,
++                                                    int64_t pad_l, int64_t pad_b, int64_t pad_r, int64_t stride_h,
++                                                    int64_t stride_w, float* data_im, CPUMathUtil* context) {
++  if (kernel_h == 2 && kernel_w == 2 && stride_h == 2 && stride_w == 2 &&
++      dilation_h == 1 && dilation_w == 1 && pad_t == 0 && pad_l == 0 && pad_b == 0 && pad_r == 0 &&
++      height % 2 == 0 && width % 2 == 0) {
++    Col2im2x2Stride2(data_col, channels, height / 2, width / 2, data_im);
++    return;
++  }
++
++  Col2imNCHWGeneral(data_col, channels, height, width, kernel_h, kernel_w, dilation_h, dilation_w,
++                    pad_t, pad_l, pad_b, pad_r, stride_h, stride_w, data_im, context);
++}
++
+ template <>
+ void Col2im<float, CPUMathUtil, StorageOrder::NHWC>(const float* data_col, int64_t channels, int64_t height,
+                                                     int64_t width, int64_t kernel_h, int64_t kernel_w,
+diff --git a/onnxruntime/test/framework/math_test.cc b/onnxruntime/test/framework/math_test.cc
+index 2220de5..cf37216 100644
+--- a/onnxruntime/test/framework/math_test.cc
++++ b/onnxruntime/test/framework/math_test.cc
+@@ -16,7 +16,12 @@
+ // Modifications Copyright (c) Microsoft.
+ 
+ #include "core/util/math.h"
++#include <array>
++#include <cmath>
++#include <cstring>
++#include <limits>
+ #include <gtest/gtest.h>
++#include "core/common/inlined_containers.h"
+ #include "core/platform/threadpool.h"
+ #include "core/util/math_cpuonly.h"
+ #include "core/util/thread_utils.h"
+@@ -202,6 +207,94 @@ TEST(MathTest, GemvTrans) {
+   }
+ }
+ 
++TEST(MathTest, Col2im2x2AndFallbacks) {
++  struct TestCase {
++    int64_t height;
++    int64_t width;
++    std::array<int64_t, 2> kernel;
++    std::array<int64_t, 2> stride;
++    std::array<int64_t, 2> dilation;
++    std::array<int64_t, 4> pads;
++  };
++  const TestCase cases[] = {
++      {2, 2, {2, 2}, {2, 2}, {1, 1}, {0, 0, 0, 0}},
++      {6, 10, {2, 2}, {2, 2}, {1, 1}, {0, 0, 0, 0}},
++      {34, 130, {2, 2}, {2, 2}, {1, 1}, {0, 0, 0, 0}},
++      {6, 128, {2, 2}, {2, 2}, {1, 1}, {0, 0, 0, 0}},
++      {6, 134, {2, 2}, {2, 2}, {1, 1}, {0, 0, 0, 0}},
++      // An extra output row or column must still be set to zero.
++      {7, 10, {2, 2}, {2, 2}, {1, 1}, {0, 0, 0, 0}},
++      {6, 11, {2, 2}, {2, 2}, {1, 1}, {0, 0, 0, 0}},
++      {7, 11, {2, 2}, {2, 2}, {1, 1}, {0, 0, 0, 0}},
++      {6, 10, {2, 2}, {2, 2}, {1, 1}, {1, 0, 0, 0}},
++      {6, 10, {2, 2}, {2, 2}, {1, 1}, {0, 1, 0, 0}},
++      {6, 10, {2, 2}, {2, 2}, {1, 1}, {0, 0, 1, 0}},
++      {6, 10, {2, 2}, {2, 2}, {1, 1}, {0, 0, 0, 1}},
++      {6, 10, {2, 2}, {2, 2}, {2, 1}, {0, 0, 0, 0}},
++      {6, 10, {2, 2}, {2, 2}, {1, 2}, {0, 0, 0, 0}},
++      {6, 10, {2, 2}, {1, 2}, {1, 1}, {0, 0, 0, 0}},
++      {6, 10, {2, 2}, {2, 1}, {1, 1}, {0, 0, 0, 0}},
++      {6, 10, {3, 2}, {2, 2}, {1, 1}, {0, 0, 0, 0}},
++      {6, 10, {2, 3}, {2, 2}, {1, 1}, {0, 0, 0, 0}},
++  };
++  auto& provider = CPUMathUtil::Instance();
++  for (const auto& c : cases) {
++    SCOPED_TRACE(testing::Message() << c.height << "x" << c.width
++                                    << " kernel=" << testing::PrintToString(c.kernel)
++                                    << " stride=" << testing::PrintToString(c.stride)
++                                    << " dilation=" << testing::PrintToString(c.dilation)
++                                    << " pads=" << testing::PrintToString(c.pads));
++    const int64_t channels = 3;
++    const int64_t image_shape[] = {c.height, c.width};
++    const int64_t column_channels = channels * c.kernel[0] * c.kernel[1];
++    const int64_t column_shape[] = {
++        (c.height + c.pads[0] + c.pads[2] - (c.dilation[0] * (c.kernel[0] - 1) + 1)) / c.stride[0] + 1,
++        (c.width + c.pads[1] + c.pads[3] - (c.dilation[1] * (c.kernel[1] - 1) + 1)) / c.stride[1] + 1};
++    const size_t column_size = static_cast<size_t>(column_channels * column_shape[0] * column_shape[1]);
++    const int64_t image_size = channels * c.height * c.width;
++    InlinedVector<float> column;
++    column.reserve(column_size);
++    for (size_t i = 0; i < column_size; ++i) {
++      column.push_back(static_cast<float>(static_cast<int>(i % 257) - 128) * 0.25f);
++    }
++    InlinedVector<float> expected(static_cast<size_t>(image_size));
++    // Leave a guard before and after an output that is not aligned to 16 bytes.
++    InlinedVector<float> actual(static_cast<size_t>(image_size) + 2, -12345.0f);
++    math::Col2imNd<float, CPUMathUtil, StorageOrder::NCHW>(
++        column.data(), image_shape, column_shape, column_channels, image_size,
++        c.kernel.data(), c.stride.data(), c.dilation.data(), c.pads.data(), 2,
++        expected.data(), &provider);
++    math::Col2im<float, CPUMathUtil, StorageOrder::NCHW>(
++        column.data(), channels, c.height, c.width, c.kernel[0], c.kernel[1],
++        c.dilation[0], c.dilation[1], c.pads[0], c.pads[1], c.pads[2], c.pads[3],
++        c.stride[0], c.stride[1], actual.data() + 1, &provider);
++    EXPECT_EQ(0, std::memcmp(expected.data(), actual.data() + 1, expected.size() * sizeof(float)));
++    EXPECT_EQ(actual.front(), -12345.0f);
++    EXPECT_EQ(actual.back(), -12345.0f);
++  }
++}
++
++TEST(MathTest, Col2im2x2SpecialValues) {
++  const float column[] = {-0.0f, 0.0f, std::numeric_limits<float>::infinity(),
++                          -std::numeric_limits<float>::infinity(),
++                          std::numeric_limits<float>::quiet_NaN(),
++                          std::numeric_limits<float>::denorm_min(),
++                          -std::numeric_limits<float>::denorm_min(), 1.0f};
++  float actual[8];
++  auto& provider = CPUMathUtil::Instance();
++  math::Col2im<float, CPUMathUtil, StorageOrder::NCHW>(
++      column, 1, 2, 4, 2, 2, 1, 1, 0, 0, 0, 0, 2, 2, actual, &provider);
++  const int source_indices[] = {0, 2, 1, 3, 4, 6, 5, 7};
++  for (size_t i = 0; i < std::size(actual); ++i) {
++    const float expected = 0.0f + column[source_indices[i]];
++    if (std::isnan(expected)) {
++      EXPECT_TRUE(std::isnan(actual[i]));
++    } else {
++      EXPECT_EQ(0, std::memcmp(&expected, &actual[i], sizeof(float))) << i;
++    }
++  }
++}
++
+ TEST(MathTest, HalfFloatConversion) {
+   constexpr float original_values[] = {-4.0f, -2.0f, -1.0f, -0.5f, 0.0f, 0.5f, 1.0f, 2.0f, 4.0f};
+   for (const auto original_value : original_values) {
+diff --git a/onnxruntime/test/providers/cpu/nn/conv_transpose_op_test.cc b/onnxruntime/test/providers/cpu/nn/conv_transpose_op_test.cc
+index cfc9aee..7e6d286 100644
+--- a/onnxruntime/test/providers/cpu/nn/conv_transpose_op_test.cc
++++ b/onnxruntime/test/providers/cpu/nn/conv_transpose_op_test.cc
+@@ -136,6 +136,26 @@ TEST(ConvTransposeTest, ConvTranspose_1D) {
+   TestConvTransposeOp(attrs, {X, W}, {X_shape, W_shape}, expected_vals, Y_shape);
+ }
+ 
++TEST(ConvTransposeTest, ConvTranspose_2x2_Stride2_GroupBiasBatch) {
++  const ConvTransposeOpAttributes attrs{
++      {2, 2}, {}, {}, {0, 0, 0, 0}, {2, 2}, {1, 1}, 2, "NOTSET"};
++  const std::vector<float> input = {1, 2, 3, -1, -2, -3, 4, 5, 6, -4, -5, -6};
++  const std::vector<float> weights = {1, 2, 3, 4, -1, -2, -3, -4,
++                                      5, 6, 7, 8, -5, -6, -7, -8};
++  const std::vector<float> bias = {1, 2, 3, 4};
++  const std::vector<float> expected = {
++      2, 3, 3, 5, 4, 7, 4, 5, 7, 9, 10, 13,
++      1, 0, 0, -2, -1, -4, -1, -2, -4, -6, -7, -10,
++      -2, -3, -7, -9, -12, -15, -4, -5, -11, -13, -18, -21,
++      9, 10, 14, 16, 19, 22, 11, 12, 18, 20, 25, 28,
++      5, 9, 6, 11, 7, 13, 13, 17, 16, 21, 19, 25,
++      -2, -6, -3, -8, -4, -10, -10, -14, -13, -18, -16, -22,
++      -17, -21, -22, -27, -27, -33, -25, -29, -32, -37, -39, -45,
++      24, 28, 29, 34, 34, 40, 32, 36, 39, 44, 46, 52};
++  TestConvTransposeOp(attrs, {input, weights, bias},
++                      {{2, 2, 1, 3}, {2, 2, 2, 2}, {4}}, expected, {2, 4, 2, 6});
++}
++
+ TYPED_TEST(ConvTransposeTest, ConvTranspose_2D_outputpadding_strides2) {
+   ConvTransposeOpAttributes attrs = {
+       std::vector<int64_t>{3, 3},        // kernel_shape

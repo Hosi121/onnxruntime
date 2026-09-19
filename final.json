@@ -1,0 +1,122 @@
+{
+  "base": "09dfa6ad06ed8072b2fbe57687d4f71c7914b025",
+  "commit": "55c90e1da11012640da880148a6594f0432f60da",
+  "branch": "perf/cpu-col2im",
+  "libraries": {
+    "baseline": {
+      "sha256": "f57b7988360f59abf17ddc5f318939669f8e95b11cce5678e336fcaaf42a02ac",
+      "bytes": 36763160
+    },
+    "candidate": {
+      "sha256": "6c4b9517f746f46970b17ab13efce96145c94962897d659813214c1217768639",
+      "bytes": 36763160
+    }
+  },
+  "source_sha256": {
+    "onnxruntime/core/util/math_cpu.cc": "53d729cc8498391034a6cc1aa38c4a0cc03fc412cdb66382d4c917b89db0a65b",
+    "onnxruntime/test/framework/math_test.cc": "5c1908a89ca05b025432f4462c4d523a3c93560e5ee7a4737d12e178bd02a4f0",
+    "onnxruntime/test/providers/cpu/nn/conv_transpose_op_test.cc": "25d41e714ef7fad9b12bb0e7bbeab838333836000f4be7b07c4ce95a650df9b3"
+  },
+  "change": {
+    "files": 3,
+    "additions": 154,
+    "deletions": 7,
+    "production_additions": 37,
+    "production_deletions": 7
+  },
+  "tests": {
+    "final_math_tests.log": {
+      "passed": 10,
+      "sha256": "89865e68f8cf0799a058f1599b58287c2abd88de435c80d0c6a14706c060ae01"
+    },
+    "final_operator_tests.log": {
+      "passed": 81,
+      "sha256": "13d8e53811b3dc118ab4d274f3cf23398b8699eb3988765596d3658193981815",
+      "skipped": 3
+    }
+  },
+  "sanitizer": {
+    "checks": 1198,
+    "values": 4066230,
+    "bitwise_equal": true,
+    "guards_unchanged": true,
+    "base": "09dfa6ad06ed8072b2fbe57687d4f71c7914b025",
+    "candidate_sha256": "53d729cc8498391034a6cc1aa38c4a0cc03fc412cdb66382d4c917b89db0a65b",
+    "harness_sha256": "81818ff2785c7daef9553ce517f2196e816c22194365d3b53fb0f37b6ad7e776",
+    "flags": [
+      "-std=c++20",
+      "-O2",
+      "-g",
+      "-fno-omit-frame-pointer",
+      "-fsanitize=address,undefined",
+      "-fno-sanitize-recover=all",
+      "-fno-fast-math",
+      "-ffp-contract=off"
+    ],
+    "stderr": "",
+    "scope": "Extracted Col2im bodies with small-input helper replacements. Not a full ASan runtime build."
+  },
+  "reports": {
+    "range_benchmark_results.json": {
+      "sha256": "8c2f556c92cc6e95788f30e8886ba79b65564538f148a71c43a38eae3d37d40a",
+      "candidate_comparisons": 272,
+      "candidate_output_values": 105632384,
+      "all_checks_bitwise_equal": true,
+      "case_runs": 34
+    },
+    "range_replicate_results.json": {
+      "sha256": "f7c2cbfd6dad878f335ea669e185c40d95310b57c1fd3f5f0a7c2345ac344d54",
+      "candidate_comparisons": 280,
+      "candidate_output_values": 166381760,
+      "all_checks_bitwise_equal": true,
+      "case_runs": 90
+    }
+  },
+  "runner_sha256": "8f975d723a82ee3f7b155cbc459ded08eca5f16119e222116ef06aa428e510f6",
+  "runner_source_sha256": "efd65ab39d5d41d0ef25931fe397ac7b682dcc10be58d8b1743622641685e959",
+  "symbol": {
+    "name": "_ZN11onnxruntime4math6Col2imIfNS_11CPUMathUtilELi2EEEvPKT_lllllllllllllPS3_PT0_",
+    "bytes": 4372,
+    "vector_instructions": [
+      "116bf29:\t0f 58 ca             \taddps  %xmm2,%xmm1",
+      "116bf3f:\t0f 58 e2             \taddps  %xmm2,%xmm4",
+      "116bf45:\t0f 14 ec             \tunpcklps %xmm4,%xmm5",
+      "116bf48:\t0f 15 cc             \tunpckhps %xmm4,%xmm1",
+      "116bf5e:\t0f 58 ca             \taddps  %xmm2,%xmm1",
+      "116bf61:\t0f 58 e2             \taddps  %xmm2,%xmm4",
+      "116bf67:\t0f 15 cc             \tunpckhps %xmm4,%xmm1",
+      "116bf6a:\t0f 14 ec             \tunpcklps %xmm4,%xmm5",
+      "116c02e:\t0f 58 cb             \taddps  %xmm3,%xmm1",
+      "116c039:\t0f 58 e3             \taddps  %xmm3,%xmm4",
+      "116c03f:\t0f 14 ec             \tunpcklps %xmm4,%xmm5",
+      "116c042:\t0f 14 cc             \tunpcklps %xmm4,%xmm1",
+      "116c06c:\t0f 58 cb             \taddps  %xmm3,%xmm1",
+      "116c07e:\t0f 58 e3             \taddps  %xmm3,%xmm4",
+      "116c084:\t0f 14 ec             \tunpcklps %xmm4,%xmm5",
+      "116c087:\t0f 14 cc             \tunpcklps %xmm4,%xmm1",
+      "116c57a:\t0f 58 c7             \taddps  %xmm7,%xmm0",
+      "116c5d0:\t0f 58 c1             \taddps  %xmm1,%xmm0",
+      "116c8aa:\t0f 58 c6             \taddps  %xmm6,%xmm0",
+      "116c8f1:\t0f 58 c1             \taddps  %xmm1,%xmm0"
+    ]
+  },
+  "lint": "passed",
+  "review": {
+    "scope": "FP32 CPU NCHW Col2im, ConvTranspose and Col2Im callers, and added tests",
+    "checks": [
+      "No API or ABI change",
+      "No shared mutable state or new allocation",
+      "Existing GEMM and thread use remain unchanged",
+      "Each output keeps its accumulation order",
+      "Bounds tests include empty valid-column ranges and odd output dimensions"
+    ],
+    "remaining_actionable_findings": []
+  },
+  "limitations": [
+    "CPU performance was measured on one Linux x86-64 WSL2 host.",
+    "ARM and GPU performance were not measured.",
+    "Four-thread times have substantial process variation.",
+    "The sanitizer harness is not a full-runtime ASan build.",
+    "Allocated intermediate RAM does not decrease."
+  ]
+}

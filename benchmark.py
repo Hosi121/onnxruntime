@@ -134,6 +134,9 @@ def cases(args):
             ("padding", {"pads": [1, 1, 1, 1]}),
             ("dilation", {"dilation": 2}),
             ("output_padding", {"extra": [1, 1]}),
+            ("padding_stride1", {"kernel": 3, "stride": 1, "pads": [1, 1, 1, 1]}),
+            ("dilation_stride1", {"stride": 1, "dilation": 2}),
+            ("padding_kernel4", {"kernel": 4, "pads": [1, 1, 1, 1]}),
         ]:
             model, sample = operator_model(16, 16, 64, 64, rng, **options)
             yield f"fallback_{name}", model, sample
